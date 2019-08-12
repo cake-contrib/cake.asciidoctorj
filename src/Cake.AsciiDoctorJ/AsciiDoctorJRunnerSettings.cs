@@ -19,8 +19,14 @@ namespace Cake.AsciiDoctorJ
 
      */
 
+    /// <summary>
+    /// The settings for AsciiDoctorJ
+    /// </summary>
     public class AsciiDoctorJRunnerSettings : ToolSettings
     {
+        /// <summary>
+        /// Default
+        /// </summary>
         public AsciiDoctorJRunnerSettings()
         {
             InputFiles = new List<FilePath>();
@@ -169,6 +175,11 @@ namespace Cake.AsciiDoctorJ
         /// </summary>
         public IDictionary<string, string> Attributes { get; private set; }
 
+        /// <summary>
+        /// Processes the given settings and modifies the <see cref="ProcessArgumentBuilder"/>
+        /// </summary>
+        /// <param name="args"></param>
+        /// <param name="environment"></param>
         internal void Evaluate(ProcessArgumentBuilder args, ICakeEnvironment environment)
         {
             if (Version)
