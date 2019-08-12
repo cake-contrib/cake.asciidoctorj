@@ -1,4 +1,4 @@
-exe:
+nupgk:
   image: mono
   script: 
   - "cd ./build/"
