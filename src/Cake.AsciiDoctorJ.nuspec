@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Cake.AsciiDoctorJ</id>
+	<version>0.0.1</version>
+    <title>Cake.AsciiDoctorJ</title>
+    <authors>Nils Andresen</authors>
+    <owners>Nils Andresen</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/nils-a/cake.asciidoctorj</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Adds AsciiDoctorJ alias for Cake</summary>
+    <description>An alias to run AcsiiDoctorJ as part of a build</description>
+    <tags>Cake Script Build asciidoc</tags>
+  </metadata>
+  <files>
+    <file src="Cake.AsciiDoctorJ.dll" target="lib\net46" />
+  </files>
+</package>
