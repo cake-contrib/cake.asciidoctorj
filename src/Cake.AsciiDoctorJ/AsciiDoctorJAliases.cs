@@ -10,17 +10,27 @@ namespace Cake.AsciiDoctorJ
     public static class AsciiDoctorJAliases
     {
         /// <summary>
-        /// run AsciiDoctorJ:
-        ///
-        /// Example:
-        /// AsciiDoctorJ(s => s
-        ///   .WithVerbose()
-        ///   .WithInputFile(file)
-        ///   .WithDestinationDir(distDir));
+        /// Runs AsciiDoctorJ
         /// </summary>
         /// <param name="context"></param>
         /// <param name="configure"></param>
         /// <returns></returns>
+        /// /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// Task("Convert")
+        ///     .Does(() =>
+        /// {
+        ///     AsciiDoctorJ(s => s
+	    ///         .WithVerbose()
+	    ///         .WithDocType(DocType.Article)
+	    ///         .WithBackend("pdf")
+	    ///         .WithInputFile(file)
+	    ///         .WithDestinationDir(distDir));
+        /// });
+        /// ]]>
+        /// </code>
+        /// </example>
         [CakeMethodAlias]
         public static IAsciiDoctorJRunner AsciiDoctorJ(
             this ICakeContext context,
