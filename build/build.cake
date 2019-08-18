@@ -1,4 +1,5 @@
 #tool "nuget:?package=NUnit.ConsoleRunner&version=3.10.0"
+#tool "nuget:?package=OpenCover&version=4.7.922"
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -38,10 +39,31 @@ Task("Build")
 		.SetConfiguration(configuration)
 		.WithTarget("Build")
 	); 
-	
+		
+	// test & coverage
 	var testAssemblies = GetFiles(srcDir + File($"**/bin/{configuration}/*.Tests.dll"));
-	var workDir = testAssemblies.First().GetDirectory();
-	NUnit3(testAssemblies);
+	var testOutput = binDir + File("TestResult.xml");
+	var coverOutput = binDir + File("CoverageResult.xml");
+	OpenCover(c => 
+	{
+		c.NUnit3(testAssemblies, new NUnit3Settings 
+		{
+			Work = binDir,
+			OutputFile = testOutput
+		});
+	},
+	coverOutput,
+	new OpenCoverSettings()
+		.WithFilter("+[Cake.AsciiDoctorJ]*")
+		.WithFilter("-[Cake.AsciiDoctorJ.Tests]*")
+	);
+	
+	// on AppVeyor, publish testsettings..
+	if(EnvironmentVariable("APPVEYOR_JOB_ID") != null)
+	{
+		Information("Running on appveyor. Publishing Test-Result.");
+		BuildSystem.AppVeyor.UploadTestResults(testOutput, AppVeyorTestResultsType.NUnit3);
+	}
 });
 
 Task("Dist")
