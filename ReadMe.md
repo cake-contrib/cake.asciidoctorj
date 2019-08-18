@@ -1,10 +1,10 @@
-# cake.asciidoctorj
+# Cake.AsciiDoctorJ
 
 This addin makes [asciidoctorj](https://github.com/asciidoctor/asciidoctorj) available as a tool in [cake](https://cakebuild.net/)
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://cake-contrib.mit-license.org)
 
-## usage
+## Usage
 
 Install asciidoctorj - this addin has no dependency on asciidoctorj.
 

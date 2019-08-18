@@ -1,12 +1,10 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Cake.AsciiDoctorJ")]
+[assembly: AssemblyTitle("Cake.AsciiDoctorJ.Tests")]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5b65b4ed-0902-48a4-8ff6-c3e6d0954bc6")]
-[assembly: InternalsVisibleTo("Cake.AsciiDoctorJ.Tests")]
+[assembly: Guid("76882fbf-6da4-4221-ac2e-8d5cb28f104d")]

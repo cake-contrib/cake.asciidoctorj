@@ -4,3 +4,5 @@ lib/packages/
 .vs/
 build/tools
 dist
+TestResult.xml
+TestResults/

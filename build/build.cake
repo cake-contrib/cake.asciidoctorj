@@ -1,4 +1,4 @@
-
+#tool "nuget:?package=NUnit.ConsoleRunner&version=3.10.0"
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -38,6 +38,10 @@ Task("Build")
 		.SetConfiguration(configuration)
 		.WithTarget("Build")
 	); 
+	
+	var testAssemblies = GetFiles(srcDir + File($"**/bin/{configuration}/*.Tests.dll"));
+	var workDir = testAssemblies.First().GetDirectory();
+	NUnit3(testAssemblies);
 });
 
 Task("Dist")
