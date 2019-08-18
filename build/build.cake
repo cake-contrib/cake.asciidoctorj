@@ -1,5 +1,7 @@
 #tool "nuget:?package=NUnit.ConsoleRunner&version=3.10.0"
 #tool "nuget:?package=OpenCover&version=4.7.922"
+#tool "nuget:?package=coveralls.io&version=1.4.2"
+#addin "nuget:?package=Cake.Coveralls&version=0.10.0"
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -41,6 +43,7 @@ Task("Build")
 	); 
 		
 	// test & coverage
+	Information("Test and coverage...");
 	var testAssemblies = GetFiles(srcDir + File($"**/bin/{configuration}/*.Tests.dll"));
 	var testOutput = binDir + File("TestResult.xml");
 	var coverOutput = binDir + File("CoverageResult.xml");
@@ -61,8 +64,22 @@ Task("Build")
 	// on AppVeyor, publish testsettings..
 	if(EnvironmentVariable("APPVEYOR_JOB_ID") != null)
 	{
-		Information("Running on appveyor. Publishing Test-Result.");
+		Information("Running on AppVeyor. Publishing Test-Result.");
 		BuildSystem.AppVeyor.UploadTestResults(testOutput, AppVeyorTestResultsType.NUnit3);
+
+		var repoToken = EnvironmentVariable("COVERALLS_REPO_TOKEN");
+		if(repoToken == null)
+		{
+			Warning("We're running on AppVeyor but there is no COVERALLS_REPO_TOKEN");
+		} 
+		else 
+		{
+			Information("Publishing Coverage-Result to coveralls.io");
+			CoverallsIo(coverOutput, new CoverallsIoSettings()
+			{
+				RepoToken = repoToken
+			});
+		}
 	}
 });
 
