@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - moved project into cake-contrb
-- modified nuspec to reflect new project-path
 - created a changelog
+- many changes to internal project-structure
 
 ## [1.0.0] - 2019-08-13
 ### Added

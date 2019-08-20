@@ -1,41 +1,79 @@
 # Cake.AsciiDoctorJ
 
-This addin makes [asciidoctorj](https://github.com/asciidoctor/asciidoctorj) available as a tool in [cake](https://cakebuild.net/)
+[![standard-readme compliant][]][standard-readme]
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors)
+[![Appveyor build][appveyorimage]][appveyor]
+[![Codecov Report][codecovimage]][codecov]
+[![NuGet package][nugetimage]][nuget]
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://cake-contrib.mit-license.org)
+> makes [asciidoctorj](https://github.com/asciidoctor/asciidoctorj) available as a tool in [cake](https://cakebuild.net/)
+
+## Table of Contents
+
+- [Install](#install)
+- [Usage](#usage)
+- [Maintainer](#maintainer)
+- [Contributing](#contributing)
+  - [Contributors](#contributors)
+- [License](#license)
+
+## Install
+
+```cs
+#addin nuget:?package=Cake.AsciiDoctorJ
+```
 
 ## Usage
 
-Install asciidoctorj - this addin has no dependency on asciidoctorj.
-
 ```cs
-#addin "nuget:?package=Cake.AsciiDoctorJ"
+#addin nuget:?package=Cake.AsciiDoctorJ
 
-AsciiDoctorJ(s => s
-	.WithVerbose()
-	.WithInputFile(file)
-	.WithDestinationDir(distDir));
+Task("MyTask").Does(() => {
+  AsciiDoctorJ(s => s
+	  .WithVerbose()
+	  .WithInputFile(file)
+	  .WithDestinationDir(distDir));
+});
 ```
 
-## Build Status
+## Maintainer
 
-|Develop|Master|
-|:--:|:--:|
-|[![Build status](https://ci.appveyor.com/api/projects/status/lfnuyv5q5dbc9aoj/branch/develop?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-asciidoctorj/branch/develop)|[![Build status](https://ci.appveyor.com/api/projects/status/lfnuyv5q5dbc9aoj/branch/master?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-asciidoctorj/branch/master)|
+[Nils Andresen @nils-a][maintainer]
 
-## Code Coverage
+## Contributing
 
-[![Coverage Status](https://coveralls.io/repos/github/cake-contrib/cake.asciidoctorj/badge.svg?branch=develop)](https://coveralls.io/github/cake-contrib/cake.asciidoctorj?branch=develop)
+Cake.AsciiDoctorJ follows the [Contributor Covenant][contrib-covenant] Code of Conduct.
 
-## Packages
+We accept Pull Requests.
+Please see [the contributing file][contributing] for how to contribute to Cake.AsciiDoctorJ.
 
-| Location | Link |
-|:--:|:--:|
-|NuGet|![Nuget](https://img.shields.io/nuget/v/cake.asciidoctorj)|
+Small note: If editing the Readme, please conform to the [standard-readme][] specification.
 
+This project follows the [all-contributors][] specification. Contributions of any kind welcome!
 
-## Chat Room
+### Contributors
 
-Join in the conversation about Cake.AsciiDoctorJ on gitter
+Thanks goes to these wonderful people ([emoji key][emoji-key]):
 
-[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)](https://gitter.im/cake-contrib/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+## License
+
+[MIT License © Nils Andresen][license]
+
+[all-contributors]: https://github.com/all-contributors/all-contributors
+[appveyor]: https://ci.appveyor.com/project/cakecontrib/cake-asciidoctorj
+[appveyorimage]: https://img.shields.io/appveyor/ci/cakecontrib/cake-asciidoctorj.svg?logo=appveyor&style=flat-square
+[codecov]: https://codecov.io/gh/cake-contrib/Cake.AsciiDoctorJ
+[codecovimage]: https://img.shields.io/codecov/c/github/cake-contrib/Cake.AsciiDoctorJ.svg?logo=codecov&style=flat-square
+[contrib-covenant]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
+[contributing]: CONTRIBUTING.md
+[emoji-key]: https://allcontributors.org/docs/en/emoji-key
+[maintainer]: https://github.com/nils-a
+[nuget]: https://nuget.org/packages/Cake.AsciiDoctorJ
+[nugetimage]: https://img.shields.io/nuget/v/Cake.AsciiDoctorJ.svg?logo=nuget&style=flat-square
+[license]: LICENSE.txt
+[standard-readme]: https://github.com/RichardLitt/standard-readme
+[standard-readme compliant]: https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square

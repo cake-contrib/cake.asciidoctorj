@@ -1,18 +1,21 @@
-﻿using Cake.Core;
+using Cake.Core;
 using Cake.Core.IO;
 using NUnit.Framework;
-using AutoFixture;
 using FluentAssertions;
+using Cake.Testing;
 
 namespace Cake.AsciiDoctorJ.Tests
 {
     [TestFixture]
-    public class SettingsTests : TestBase
+    [TestOf(typeof(AsciiDoctorJRunnerSettings))]
+    public class SettingsTests
     {
+        private ICakeEnvironment environment;
+
         [SetUp]
         public void Setup()
         {
-            SetupFixture();
+            environment = FakeEnvironment.CreateWindowsEnvironment();
         }
 
         [TestCase("Version", "--version")]
@@ -23,7 +26,7 @@ namespace Cake.AsciiDoctorJ.Tests
         [TestCase("Quiet", "--quiet")]
         [TestCase("SuppressHeaderAndFooter", "--no-header-footer")]
         [TestCase("Compact", "--compact")]
-        public void SimpleBoolProperties(string propertyName, string expectedParam)
+        public void Should_Convert_All_Flags_To_Arguments(string propertyName, string expectedParam)
         {
             var args = new ProcessArgumentBuilder();
             var sut = new AsciiDoctorJRunnerSettings();
@@ -31,7 +34,7 @@ namespace Cake.AsciiDoctorJ.Tests
             var prop = typeof(AsciiDoctorJRunnerSettings).GetProperty(propertyName);
             prop.SetValue(sut, true);
 
-            sut.Evaluate(args, Fixture.Create<ICakeEnvironment>());
+            sut.Evaluate(args, environment);
 
             var actual = args.Render();
             actual.Should().Contain(expectedParam);
@@ -41,7 +44,7 @@ namespace Cake.AsciiDoctorJ.Tests
         [TestCase(SafeMode.Unsafe, "--safe-mode unsafe")]
         [TestCase(SafeMode.Secure, "--safe-mode secure")]
         [TestCase(SafeMode.Server, "--safe-mode server")]
-        public void SafeModeValues(SafeMode mode, string expected)
+        public void Should_Convert_SafeMode_Settings_To_Arguments(SafeMode mode, string expected)
         {
             var args = new ProcessArgumentBuilder();
             var sut = new AsciiDoctorJRunnerSettings
@@ -49,7 +52,7 @@ namespace Cake.AsciiDoctorJ.Tests
                 SafeMode = mode
             };
 
-            sut.Evaluate(args, Fixture.Create<ICakeEnvironment>());
+            sut.Evaluate(args, environment);
 
             var actual = args.Render();
             actual.Should().Contain(expected);
@@ -57,7 +60,7 @@ namespace Cake.AsciiDoctorJ.Tests
 
         [TestCase(ERuby.Erb, "--eruby erb")]
         [TestCase(ERuby.Erubis, "--eruby erubis")]
-        public void ERubyValues(ERuby eruby, string expected)
+        public void Should_Convert_Eruby_Settings_To_Arguments(ERuby eruby, string expected)
         {
             var args = new ProcessArgumentBuilder();
             var sut = new AsciiDoctorJRunnerSettings
@@ -65,7 +68,7 @@ namespace Cake.AsciiDoctorJ.Tests
                 ERuby = eruby
             };
 
-            sut.Evaluate(args, Fixture.Create<ICakeEnvironment>());
+            sut.Evaluate(args, environment);
 
             var actual = args.Render();
             actual.Should().Contain(expected);
@@ -74,7 +77,7 @@ namespace Cake.AsciiDoctorJ.Tests
         [TestCase(DocType.Article, "--doctype article")]
         [TestCase(DocType.Book, "--doctype book")]
         [TestCase(DocType.Inline, "--doctype inline")]
-        public void DocTypeValues(DocType type, string expected)
+        public void Should_Convert_DocType_Settings_To_Arguments(DocType type, string expected)
         {
             var args = new ProcessArgumentBuilder();
             var sut = new AsciiDoctorJRunnerSettings
@@ -82,7 +85,7 @@ namespace Cake.AsciiDoctorJ.Tests
                 DocType = type
             };
 
-            sut.Evaluate(args, Fixture.Create<ICakeEnvironment>());
+            sut.Evaluate(args, environment);
 
             var actual = args.Render();
             actual.Should().Contain(expected);
