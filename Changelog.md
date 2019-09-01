@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 
-## [1.0.1 - 2019-09-01]
+## [1.0.1] - 2019-09-01
 ### Changed
-- moved project into cake-contrb
+- moved project into cake-contrib
 - created a changelog
 - (GH-2) many changes to internal project-structure
 
