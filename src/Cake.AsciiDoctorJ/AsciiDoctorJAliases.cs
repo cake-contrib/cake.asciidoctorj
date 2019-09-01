@@ -1,4 +1,4 @@
-﻿using Cake.Core;
+using Cake.Core;
 using Cake.Core.Annotations;
 using System;
 
@@ -34,7 +34,7 @@ namespace Cake.AsciiDoctorJ
         [CakeMethodAlias]
         public static IAsciiDoctorJRunner AsciiDoctorJ(
             this ICakeContext context,
-            Action<AsciiDoctorJRunnerSettings> configure)
+            Action<AsciiDoctorJRunnerSettings> configure = null)
         {
             if (context == null)
             {
@@ -43,6 +43,48 @@ namespace Cake.AsciiDoctorJ
 
             var runner = new AsciiDoctorJRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             return runner.Run(configure);
+        }
+
+        /// <summary>
+        /// Runs AsciiDoctorJ
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="settings"></param>
+        /// <returns></returns>
+        /// /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// Task("Convert")
+        ///     .Does(() =>
+        /// {
+        ///     AsciiDoctorJ(new AsciiDoctorJRunnerSettings {
+        ///         Verbose = true,
+        ///         DocType = DocType.Article,
+        ///         Backend = "pdf",
+        ///         InputFiles = new[]{ file },
+        ///         DestinationDir = distDir
+        ///     });
+        /// });
+        /// ]]>
+        /// </code>
+        /// </example>
+        [CakeMethodAlias]
+        public static IAsciiDoctorJRunner AsciiDoctorJ(
+            this ICakeContext context,
+            AsciiDoctorJRunnerSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            var runner = new AsciiDoctorJRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            return runner.Run(settings);
         }
     }
 }

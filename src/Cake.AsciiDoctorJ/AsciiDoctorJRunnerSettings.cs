@@ -111,6 +111,9 @@ namespace Cake.AsciiDoctorJ
         /// </summary>
         public bool SuppressHeaderAndFooter { get; set; }
 
+        /// <summary>
+        /// The list of input files to be processed.
+        /// </summary>
         public IList<FilePath> InputFiles { get; private set; }
 
         /// <summary>

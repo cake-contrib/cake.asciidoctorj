@@ -1,8 +1,11 @@
-﻿using Cake.Core;
-using Cake.Core.IO;
-using Cake.Core.Tooling;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.Core.Tooling;
+
+[assembly: InternalsVisibleTo("Cake.AsciiDoctorJ.Tests")]
 
 namespace Cake.AsciiDoctorJ
 {
@@ -45,7 +48,7 @@ namespace Cake.AsciiDoctorJ
             return Run(settings);
         }
 
-        protected AsciiDoctorJRunner Run(AsciiDoctorJRunnerSettings settings)
+        internal AsciiDoctorJRunner Run(AsciiDoctorJRunnerSettings settings)
         {
             var args = new ProcessArgumentBuilder();
             settings?.Evaluate(args, environment);

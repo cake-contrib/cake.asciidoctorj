@@ -1,9 +1,0 @@
-nupgk:
-  image: mono
-  script: 
-  - "cd ./build/"
-  - "./build.sh"
-  artifacts:
-    paths:
-    - "./dist/*"
-
