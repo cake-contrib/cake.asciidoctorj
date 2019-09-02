@@ -1,11 +1,11 @@
-using Cake.Core;
-using Cake.Core.IO;
-using NUnit.Framework;
-using FluentAssertions;
-using Cake.Testing;
-
 namespace Cake.AsciiDoctorJ.Tests
 {
+    using Cake.Core;
+    using Cake.Core.IO;
+    using NUnit.Framework;
+    using FluentAssertions;
+    using Cake.Testing;
+
     [TestFixture]
     [TestOf(typeof(AsciiDoctorJRunnerSettingsExtensions))]
     public class SettingsExtensionsTests

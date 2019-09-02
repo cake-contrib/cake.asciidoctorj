@@ -1,38 +1,44 @@
-using Cake.Core;
-using Cake.Core.Annotations;
-using System;
-
 namespace Cake.AsciiDoctorJ
 {
+    using System;
+    using Cake.Core;
+    using Cake.Core.Annotations;
+
     /// <summary>
-    /// Aliases for AsciiDoctorJ
+    /// <para>Functions to call <see href="https://asciidoctor.org/">AsciiDoctorJ</see>.</para>
+    /// <para>
+    /// In order to use this addin add the following to your build.cake.
+    /// <code><![CDATA[
+    /// #addin "nuget:?package=Cake.AsciiDoctorJ"
+    /// ]]></code>
+    /// </para>
     /// </summary>
     public static class AsciiDoctorJAliases
     {
         /// <summary>
-        /// Runs AsciiDoctorJ
+        /// Runs the tool using an action to configure seetings.
         /// </summary>
-        /// <param name="context"></param>
-        /// <param name="configure"></param>
-        /// <returns></returns>
-        /// /// <example>
+        /// <param name="context">The <see cref="ICakeContext"/>.</param>
+        /// <param name="configure">An action to configure the <see cref="AsciiDoctorJRunnerSettings"/>.</param>
+        /// <example>
         /// <code>
         /// <![CDATA[
         /// Task("Convert")
         ///     .Does(() =>
         /// {
         ///     AsciiDoctorJ(s => s
-	    ///         .WithVerbose()
-	    ///         .WithDocType(DocType.Article)
-	    ///         .WithBackend("pdf")
-	    ///         .WithInputFile(file)
-	    ///         .WithDestinationDir(distDir));
+        ///         .WithVerbose()
+        ///         .WithDocType(DocType.Article)
+        ///         .WithBackend("pdf")
+        ///         .WithInputFile(file)
+        ///         .WithDestinationDir(distDir));
         /// });
         /// ]]>
         /// </code>
         /// </example>
         [CakeMethodAlias]
-        public static IAsciiDoctorJRunner AsciiDoctorJ(
+        [CakeAliasCategory("AsciiDoctorJ")]
+        public static void AsciiDoctorJ(
             this ICakeContext context,
             Action<AsciiDoctorJRunnerSettings> configure = null)
         {
@@ -42,15 +48,14 @@ namespace Cake.AsciiDoctorJ
             }
 
             var runner = new AsciiDoctorJRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            return runner.Run(configure);
+            runner.Run(configure);
         }
 
         /// <summary>
-        /// Runs AsciiDoctorJ
+        /// Runs the tool using the given <see cref="AsciiDoctorJRunnerSettings"/>.
         /// </summary>
-        /// <param name="context"></param>
-        /// <param name="settings"></param>
-        /// <returns></returns>
+        /// <param name="context">The <see cref="ICakeContext"/>.</param>
+        /// <param name="settings">The <see cref="AsciiDoctorJRunnerSettings"/>.</param>
         /// /// <example>
         /// <code>
         /// <![CDATA[
@@ -69,7 +74,8 @@ namespace Cake.AsciiDoctorJ
         /// </code>
         /// </example>
         [CakeMethodAlias]
-        public static IAsciiDoctorJRunner AsciiDoctorJ(
+        [CakeAliasCategory("AsciiDoctorJ")]
+        public static void AsciiDoctorJ(
             this ICakeContext context,
             AsciiDoctorJRunnerSettings settings)
         {
@@ -84,7 +90,7 @@ namespace Cake.AsciiDoctorJ
             }
 
             var runner = new AsciiDoctorJRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            return runner.Run(settings);
+            runner.Run(settings);
         }
     }
 }

@@ -1,11 +1,11 @@
-using System;
-using Cake.Core;
-using FluentAssertions;
-using Moq;
-using NUnit.Framework;
-
 namespace Cake.AsciiDoctorJ.Tests
 {
+    using System;
+    using Cake.Core;
+    using FluentAssertions;
+    using Moq;
+    using NUnit.Framework;
+
     [TestFixture]
     [TestOf(typeof(AsciiDoctorJAliases))]
     public class AsciiDoctorJAliasesTests

@@ -1,7 +1,7 @@
-﻿namespace Cake.AsciiDoctorJ
+namespace Cake.AsciiDoctorJ
 {
     /// <summary>
-    /// SafeModes
+    /// The SafeModes values to use with <see cref="AsciiDoctorJRunnerSettings.SafeMode"/>.
     /// </summary>
     public enum SafeMode
     {
@@ -23,6 +23,6 @@
         /// <summary>
         /// secure
         /// </summary>
-        Secure
+        Secure,
     }
 }
