@@ -36,3 +36,8 @@ indent_size = 2
 # requires the use of crlf line endings
 [tasks.json]
 end_of_line = crlf
+
+# default for ide0065 contradicts sa1200
+# see https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-language-conventions?view=vs-2019 
+# and https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1200.md
+csharp_using_directive_placement = outside_namespace

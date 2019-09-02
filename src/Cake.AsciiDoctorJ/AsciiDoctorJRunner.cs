@@ -1,28 +1,28 @@
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Cake.Core;
-using Cake.Core.IO;
-using Cake.Core.Tooling;
-
-[assembly: InternalsVisibleTo("Cake.AsciiDoctorJ.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Cake.AsciiDoctorJ.Tests")]
 
 namespace Cake.AsciiDoctorJ
 {
+    using System;
+    using System.Collections.Generic;
+    using Cake.Core;
+    using Cake.Core.IO;
+    using Cake.Core.Tooling;
+
     /// <summary>
-    /// This is the runner. <see cref="Tool{TSettings}"/>
+    /// This is the runner. <see cref="Tool{TSettings}"/>.
     /// </summary>
-    internal class AsciiDoctorJRunner : Tool<AsciiDoctorJRunnerSettings>, IAsciiDoctorJRunner
+    internal class AsciiDoctorJRunner : Tool<AsciiDoctorJRunnerSettings>
     {
-        private ICakeEnvironment environment;
+        private readonly ICakeEnvironment environment;
 
         /// <summary>
-        /// default ctor. <see cref="Tool{TSettings}(IFileSystem,ICakeEnvironment,IProcessRunner,IToolLocator)"/>
+        /// Initializes a new instance of the <see cref="AsciiDoctorJRunner"/> class.
+        /// <see cref="Tool{TSettings}(IFileSystem,ICakeEnvironment,IProcessRunner,IToolLocator)"/>.
         /// </summary>
-        /// <param name="fileSystem"></param>
-        /// <param name="environment"></param>
-        /// <param name="processRunner"></param>
-        /// <param name="tools"></param>
+        /// <param name="fileSystem">The <see cref="IFileSystem"/>.</param>
+        /// <param name="environment">The <see cref="ICakeEnvironment"/>.</param>
+        /// <param name="processRunner">The <see cref="IProcessRunner"/>.</param>
+        /// <param name="tools">The <see cref="IToolLocator"/>.</param>
         internal AsciiDoctorJRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
             : base(fileSystem, environment, processRunner, tools)
         {
@@ -30,30 +30,31 @@ namespace Cake.AsciiDoctorJ
         }
 
         /// <summary>
-        /// AsciiDoctorJ
+        /// Runs the tool using an action to configure seetings.
         /// </summary>
-        /// <returns></returns>
-        protected override string GetToolName() => "AsciiDoctorJ Runner";
-
-        /// <summary>
-        /// AsciiDoctorJ.exe
-        /// </summary>
-        /// <returns></returns>
-        protected override IEnumerable<string> GetToolExecutableNames() => new[] { "asciidoctorj.exe", "asciidoctorj" };
-
-        internal AsciiDoctorJRunner Run(Action<AsciiDoctorJRunnerSettings> configure = null)
+        /// <param name="configure">The configuration action.</param>
+        internal void Run(Action<AsciiDoctorJRunnerSettings> configure = null)
         {
             var settings = new AsciiDoctorJRunnerSettings();
             configure?.Invoke(settings);
-            return Run(settings);
+            Run(settings);
         }
 
-        internal AsciiDoctorJRunner Run(AsciiDoctorJRunnerSettings settings)
+        /// <summary>
+        /// Runs the tool.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        internal void Run(AsciiDoctorJRunnerSettings settings)
         {
             var args = new ProcessArgumentBuilder();
             settings?.Evaluate(args, environment);
             Run(settings, args);
-            return this;
         }
+
+        /// <inheritdoc/>
+        protected override string GetToolName() => "AsciiDoctorJ Runner";
+
+        /// <inheritdoc/>
+        protected override IEnumerable<string> GetToolExecutableNames() => new[] { "asciidoctorj.exe", "asciidoctorj" };
     }
 }

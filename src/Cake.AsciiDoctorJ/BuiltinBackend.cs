@@ -1,7 +1,8 @@
-﻿namespace Cake.AsciiDoctorJ
+namespace Cake.AsciiDoctorJ
 {
     /// <summary>
-    /// The builtin backends.
+    /// The builtin backends. Use <see cref="AsciiDoctorJRunnerSettingsExtensions.WithBuiltinBackend(AsciiDoctorJRunnerSettings, BuiltinBackend)"/>
+    /// to use these values to modify <see cref="AsciiDoctorJRunnerSettings.Backend"/>.
     /// </summary>
     public enum BuiltinBackend
     {
@@ -38,6 +39,6 @@
         /// <summary>
         /// manpage backend
         /// </summary>
-        manpage
+        Manpage,
     }
 }

@@ -1,7 +1,7 @@
-﻿namespace Cake.AsciiDoctorJ
+namespace Cake.AsciiDoctorJ
 {
     /// <summary>
-    /// The document types
+    /// The document types to use for <see cref="AsciiDoctorJRunnerSettings.DocType"/>.
     /// </summary>
     public enum DocType
     {
@@ -18,6 +18,6 @@
         /// <summary>
         /// Inline
         /// </summary>
-        Inline
+        Inline,
     }
 }

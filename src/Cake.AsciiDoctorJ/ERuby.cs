@@ -1,7 +1,7 @@
-﻿namespace Cake.AsciiDoctorJ
+namespace Cake.AsciiDoctorJ
 {
     /// <summary>
-    /// eRuby
+    /// The eRuby values to use for <see cref="AsciiDoctorJRunnerSettings.ERuby"/>.
     /// </summary>
     public enum ERuby
     {
@@ -13,6 +13,6 @@
         /// <summary>
         /// erubis
         /// </summary>
-        Erubis
+        Erubis,
     }
 }

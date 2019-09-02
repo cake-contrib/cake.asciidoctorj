@@ -1,31 +1,19 @@
-﻿using Cake.Core;
-using Cake.Core.IO;
-using Cake.Core.Tooling;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-
 namespace Cake.AsciiDoctorJ
 {
-    /*
-       Options:
-    -h, --help
-       show this message
-       Default: false
-
-        --trace
-       include backtrace information on errors (default: false)
-       Default: false
-
-     */
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using Cake.Core;
+    using Cake.Core.IO;
+    using Cake.Core.Tooling;
 
     /// <summary>
-    /// The settings for AsciiDoctorJ
+    /// The settings to configure the run of <see href="https://asciidoctor.org/">AsciiDoctorJ</see>.
     /// </summary>
     public class AsciiDoctorJRunnerSettings : ToolSettings
     {
         /// <summary>
-        /// Default
+        /// Initializes a new instance of the <see cref="AsciiDoctorJRunnerSettings"/> class.
         /// </summary>
         public AsciiDoctorJRunnerSettings()
         {
@@ -36,163 +24,182 @@ namespace Cake.AsciiDoctorJ
         }
 
         /// <summary>
-        /// -V, --version
-        ///    display the version and runtime environment
-        ///    Default: false
+        /// Gets or sets a value indicating whether to
+        /// display the version and runtime environment.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to: -V, --version.</para>
         /// </summary>
         public bool Version { get; set; }
 
         /// <summary>
-        ///  -v, --verbose
-        ///     enable verbose mode(default: false)
-        ///     Default: false
+        /// Gets or sets a value indicating whether to
+        /// enable verbose mode.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to: -v, --verbose.</para>
         /// </summary>
         public bool Verbose { get; set; }
 
         /// <summary>
-        /// -t, --timings
-        ///   enable timings mode(default: false)
-        ///   Default: false
+        /// Gets or sets a value indicating whether to
+        /// enable timings mode.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to: -t, --timings.</para>
         /// </summary>
         public bool TimingsMode { get; set; }
 
         /// <summary>
-        ///     -E, --template-engine
-        /// template engine to use for the custom render templates(loads gem on demand)
+        /// Gets or sets a value indicating the
+        /// template engine to use for the custom render templates (loads gem on demand).
+        /// <para>corresponds to: -E, --template-engine.</para>
         /// </summary>
         public string TemplateEngine { get; set; }
 
         /// <summary>
-        ///  -T, --template-dir
-        ///     directory containing custom render templates the override the built-in set
+        /// Gets or sets a value indicating the
+        /// directory containing custom render templates the override the built-in set.
+        /// <para>corresponds to:  -T, --template-dir.</para>
         /// </summary>
         public DirectoryPath TemplateDir { get; set; }
 
         /// <summary>
-        ///  -n, --section-numbers
-        ///     auto-number section titles in the HTML backend; disabled by default
-        ///     Default: false
+        /// Gets or sets a value indicating whether to
+        /// auto-number section titles in the HTML backend.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to:  -n, --section-numbers.</para>
         /// </summary>
         public bool SectionNumbers { get; set; }
 
         /// <summary>
-        ///  -S, --safe-mode
-        ///     set safe mode level explicitly: [unsafe, safe, server, secure] (default:
-        ///     unsafe)
-        ///     Default: UNSAFE
+        /// Gets or sets a value to
+        /// set safe mode level explicitly: [unsafe, safe, server, secure].
+        /// <para>Default: UNSAFE.</para>
+        /// <para>corresponds to: -S, --safe-mode.</para>
         /// </summary>
         public SafeMode? SafeMode { get; set; }
 
         /// <summary>
-        ///  -r, --require
-        ///     require the specified library before executing the processor(using
-        ///     require)
+        /// Gets or sets a value indicating whether to
+        /// require the specified library before executing the processor.
+        /// <para>corresponds to: -r, --require.</para>
         /// </summary>
         public bool Require { get; set; }
 
         /// <summary>
-        ///  -q, --quiet
-        ///     suppress warnings(default: false)
-        ///     Default: false
+        /// Gets or sets a value indicating whether to
+        /// suppress warnings.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to:  -q, --quiet.</para>
         /// </summary>
         public bool Quiet { get; set; }
 
         /// <summary>
-        ///  -o, --out-file
-        ///     output file(default: based on input file path); use - to output to
-        ///     STDOUT
+        /// Gets or sets a value indicating the
+        /// output file(default: based on input file path); use - to output to STDOUT.
+        /// <para>corresponds to:  -o, --out-file.</para>
         /// </summary>
         public FilePath Output { get; set; }
 
         /// <summary>
-        ///     -s, --no-header-footer
-        ///     suppress output of header and footer(default: false)
-        ///     Default: false
+        /// Gets or sets a value indicating whether to
+        /// suppress output of header and footer.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to: -s, --no-header-footer.</para>
         /// </summary>
         public bool SuppressHeaderAndFooter { get; set; }
 
         /// <summary>
-        /// The list of input files to be processed.
+        /// Gets the list of input files to be processed.
         /// </summary>
         public IList<FilePath> InputFiles { get; private set; }
 
         /// <summary>
-        ///     -I, --load-path
-        ///     add a directory to the $LOAD_PATH may be specified more than once
+        /// Gets the list of directories to add to the $LOAD_PATH.
+        /// <para>corresponds to: -I, --load-path.</para>
         /// </summary>
         public IList<DirectoryPath> LoadPath { get; private set; }
 
         /// <summary>
-        ///     -e, --eruby
-        ///     specify eRuby implementation to render built-in templates: [erb, erubis]
-        ///     (default: erb)
-        ///     Default: erb
+        /// Gets or sets a value to
+        /// specify eRuby implementation to render built-in templates: [erb, erubis].
+        /// <para>Default: erb.</para>
+        /// <para>corresponds to: -e, --eruby.</para>
         /// </summary>
         public ERuby? ERuby { get; set; }
 
         /// <summary>
-        ///     -d, --doctype
-        ///     document type to use when rendering output: [article, book, inline]
-        ///     (default: article)
+        /// Gets or sets a value indicating the
+        /// document type to use when rendering output: [article, book, inline].
+        /// <para>Default: article.</para>
+        /// <para>corresponds to:    -d, --doctype.</para>
         /// </summary>
         public DocType? DocType { get; set; }
 
         /// <summary>
-        ///     -D, --destination-dir
-        ///     destination output directory(default: directory of source file)
+        /// Gets or sets a value indicating the
+        /// destination output directory.
+        /// <para>Default: Directory of source file.</para>
+        /// <para>corresponds to:    -D, --destination-dir.</para>
         /// </summary>
         public DirectoryPath DestinationDir { get; set; }
 
         /// <summary>
-        ///     -C, --compact
-        ///     compact the output by removing blank lines(default: false)
-        ///     Default: false
+        /// Gets or sets a value indicating whether to
+        /// compact the output by removing blank lines.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to:     -C, --compact.</para>
         /// </summary>
         public bool Compact { get; set; }
 
         /// <summary>
-        ///     -cp, -classpath, --classpath
-        ///     add a directory to the classpath may be specified more than once
+        /// Gets the list of directories to add to the classpath.
+        /// <para>corresponds to:     -cp, -classpath, --classpath.</para>
         /// </summary>
         public IList<DirectoryPath> ClassPath { get; private set; }
 
         /// <summary>
-        ///     -B, --base-dir
-        ///     base directory containing the document and resources(default: directory
-        ///     of source file)
+        /// Gets or sets a value indicating the
+        /// base directory containing the document and resources.
+        /// <para>Default: directory of source file.</para>
+        /// <para>corresponds to:     -B, --base-dir.</para>
         /// </summary>
         public DirectoryPath BaseDir { get; set; }
 
         /// <summary>
-        ///     -b, --backend
-        ///     set output format backend(default: html5)
-        ///     Default: html5
+        /// Gets or sets a value indicating whether to
+        /// set output format backend.
+        /// <para>Default: html5.</para>
+        /// <para>corresponds to:     -b, --backend.</para>
         /// </summary>
         public string Backend { get; set; }
 
         /// <summary>
-        ///    -a, --attribute
-        ///    a list of attributes, in the form key or key=value pair, to set on the
-        ///    document
-        ///    Default: []
+        /// Gets the list of attributes to set on the document.
+        /// <para>Default: [].</para>
+        /// <para>corresponds to:    -a, --attribute.</para>
         /// </summary>
         public IDictionary<string, string> Attributes { get; private set; }
 
         /// <summary>
-        /// Processes the given settings and modifies the <see cref="ProcessArgumentBuilder"/>
+        /// Processes the given settings and modifies the <see cref="ProcessArgumentBuilder"/>.
         /// </summary>
-        /// <param name="args"></param>
-        /// <param name="environment"></param>
+        /// <param name="args">The <see cref="ProcessArgumentBuilder"/> to modify.</param>
+        /// <param name="environment">The <see cref="ICakeEnvironment"/>.</param>
         internal void Evaluate(ProcessArgumentBuilder args, ICakeEnvironment environment)
         {
             if (Version)
-            { args.Append("--version"); }
+            {
+                args.Append("--version");
+            }
 
             if (Verbose)
-            { args.Append("--verbose"); }
+            {
+                args.Append("--verbose");
+            }
 
             if (TimingsMode)
-            { args.Append("--timings"); }
+            {
+                args.Append("--timings");
+            }
 
             if (!string.IsNullOrEmpty(TemplateEngine))
             {
@@ -205,7 +212,9 @@ namespace Cake.AsciiDoctorJ
             }
 
             if (SectionNumbers)
-            { args.Append("--section-numbers"); }
+            {
+                args.Append("--section-numbers");
+            }
 
             if (SafeMode.HasValue)
             {
@@ -213,10 +222,14 @@ namespace Cake.AsciiDoctorJ
             }
 
             if (Require)
-            { args.Append("--require"); }
+            {
+                args.Append("--require");
+            }
 
             if (Quiet)
-            { args.Append("--quiet"); }
+            {
+                args.Append("--quiet");
+            }
 
             if (Output != null)
             {
@@ -224,19 +237,23 @@ namespace Cake.AsciiDoctorJ
             }
 
             if (SuppressHeaderAndFooter)
-            { args.Append("--no-header-footer"); }
+            {
+                args.Append("--no-header-footer");
+            }
 
             foreach (var p in LoadPath)
-            { args.Append("--load-path " + p.MakeAbsolute(environment).FullPath.Quote()); }
+            {
+                args.Append("--load-path " + p.MakeAbsolute(environment).FullPath.Quote());
+            }
 
             if (ERuby.HasValue)
             {
-                { args.Append("--eruby " + Enum.GetName(typeof(ERuby), ERuby.Value).ToLower(CultureInfo.InvariantCulture)); }
+                args.Append("--eruby " + Enum.GetName(typeof(ERuby), ERuby.Value).ToLower(CultureInfo.InvariantCulture));
             }
 
             if (DocType.HasValue)
             {
-                { args.Append("--doctype " + Enum.GetName(typeof(DocType), DocType.Value).ToLower(CultureInfo.InvariantCulture)); }
+                args.Append("--doctype " + Enum.GetName(typeof(DocType), DocType.Value).ToLower(CultureInfo.InvariantCulture));
             }
 
             if (DestinationDir != null)
@@ -245,7 +262,9 @@ namespace Cake.AsciiDoctorJ
             }
 
             if (Compact)
-            { args.Append("--compact"); }
+            {
+                args.Append("--compact");
+            }
 
             foreach (var p in ClassPath)
             {
@@ -258,7 +277,9 @@ namespace Cake.AsciiDoctorJ
             }
 
             if (!string.IsNullOrEmpty(Backend))
-            { args.Append("--backend " + Backend); }
+            {
+                args.Append("--backend " + Backend);
+            }
 
             foreach (var kvp in Attributes)
             {

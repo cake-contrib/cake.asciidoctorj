@@ -5,6 +5,15 @@
         <TargetFrameworks Condition="'$(OS)'!='Unix'">$(TargetFrameworks);net461</TargetFrameworks>
 
         <IsPackable>false</IsPackable>
+        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.0|AnyCPU'">
+        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.0|AnyCPU'">
+        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,5 +27,4 @@
     <ItemGroup>
         <ProjectReference Include="../Cake.AsciiDoctorJ/Cake.AsciiDoctorJ.csproj" />
     </ItemGroup>
-
 </Project>
