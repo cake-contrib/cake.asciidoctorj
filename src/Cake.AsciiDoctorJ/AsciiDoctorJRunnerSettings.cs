@@ -24,86 +24,86 @@ namespace Cake.AsciiDoctorJ
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
-        /// display the version and runtime environment
-        /// Default: false
-        /// corresponds to: -V, --version.
+        /// Gets or sets a value indicating whether to
+        /// display the version and runtime environment.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to: -V, --version.</para>
         /// </summary>
         public bool Version { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
-        /// enable verbose mode(default: false)
-        /// Default: false
-        /// corresponds to: -v, --verbose.
+        /// Gets or sets a value indicating whether to
+        /// enable verbose mode.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to: -v, --verbose.</para>
         /// </summary>
         public bool Verbose { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
-        /// enable timings mode
-        /// Default: false
-        /// corresponds to: -t, --timings.
+        /// Gets or sets a value indicating whether to
+        /// enable timings mode.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to: -t, --timings.</para>
         /// </summary>
         public bool TimingsMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating:
-        /// template engine to use for the custom render templates(loads gem on demand)
-        /// corresponds to: -E, --template-engine.
+        /// Gets or sets a value indicating the
+        /// template engine to use for the custom render templates (loads gem on demand).
+        /// <para>corresponds to: -E, --template-engine.</para>
         /// </summary>
         public string TemplateEngine { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating:
-        /// directory containing custom render templates the override the built-in set
-        /// corresponds to:  -T, --template-dir.
+        /// Gets or sets a value indicating the
+        /// directory containing custom render templates the override the built-in set.
+        /// <para>corresponds to:  -T, --template-dir.</para>
         /// </summary>
         public DirectoryPath TemplateDir { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
-        /// auto-number section titles in the HTML backend; disabled by default
-        /// Default: false
-        /// corresponds to:  -n, --section-numbers.
+        /// Gets or sets a value indicating whether to
+        /// auto-number section titles in the HTML backend.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to:  -n, --section-numbers.</para>
         /// </summary>
         public bool SectionNumbers { get; set; }
 
         /// <summary>
-        /// Gets or sets a value to:
-        /// set safe mode level explicitly: [unsafe, safe, server, secure]
-        /// Default: UNSAFE
-        /// corresponds to: -S, --safe-mode.
+        /// Gets or sets a value to
+        /// set safe mode level explicitly: [unsafe, safe, server, secure].
+        /// <para>Default: UNSAFE.</para>
+        /// <para>corresponds to: -S, --safe-mode.</para>
         /// </summary>
         public SafeMode? SafeMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
-        /// require the specified library before executing the processor
-        /// corresponds to: -r, --require.
+        /// Gets or sets a value indicating whether to
+        /// require the specified library before executing the processor.
+        /// <para>corresponds to: -r, --require.</para>
         /// </summary>
         public bool Require { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
-        /// suppress warnings
-        /// Default: false
-        /// corresponds to:  -q, --quiet.
+        /// Gets or sets a value indicating whether to
+        /// suppress warnings.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to:  -q, --quiet.</para>
         /// </summary>
         public bool Quiet { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating:
-        /// output file(default: based on input file path); use - to output to STDOUT
-        /// corresponds to:  -o, --out-file.
+        /// Gets or sets a value indicating the
+        /// output file(default: based on input file path); use - to output to STDOUT.
+        /// <para>corresponds to:  -o, --out-file.</para>
         /// </summary>
         public FilePath Output { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
-        /// suppress output of header and footer
-        /// Default: false
-        /// corresponds to: -s, --no-header-footer.
+        /// Gets or sets a value indicating whether to
+        /// suppress output of header and footer.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to: -s, --no-header-footer.</para>
         /// </summary>
         public bool SuppressHeaderAndFooter { get; set; }
 
@@ -114,67 +114,68 @@ namespace Cake.AsciiDoctorJ
 
         /// <summary>
         /// Gets the list of directories to add to the $LOAD_PATH.
-        /// corresponds to: -I, --load-path.
+        /// <para>corresponds to: -I, --load-path.</para>
         /// </summary>
         public IList<DirectoryPath> LoadPath { get; private set; }
 
         /// <summary>
-        /// Gets or sets a value to:
-        /// specify eRuby implementation to render built-in templates: [erb, erubis]
-        /// Default: erb
-        /// corresponds to: -e, --eruby.
+        /// Gets or sets a value to
+        /// specify eRuby implementation to render built-in templates: [erb, erubis].
+        /// <para>Default: erb.</para>
+        /// <para>corresponds to: -e, --eruby.</para>
         /// </summary>
         public ERuby? ERuby { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating the:
-        /// document type to use when rendering output: [article, book, inline]
-        /// Default: article
-        /// corresponds to:    -d, --doctype.
+        /// Gets or sets a value indicating the
+        /// document type to use when rendering output: [article, book, inline].
+        /// <para>Default: article.</para>
+        /// <para>corresponds to:    -d, --doctype.</para>
         /// </summary>
         public DocType? DocType { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating:
-        /// destination output directory(default: directory of source file)
-        /// corresponds to:    -D, --destination-dir.
+        /// Gets or sets a value indicating the
+        /// destination output directory.
+        /// <para>Default: Directory of source file.</para>
+        /// <para>corresponds to:    -D, --destination-dir.</para>
         /// </summary>
         public DirectoryPath DestinationDir { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
-        /// compact the output by removing blank lines
-        /// Default: false
-        /// corresponds to:     -C, --compact.
+        /// Gets or sets a value indicating whether to
+        /// compact the output by removing blank lines.
+        /// <para>Default: false.</para>
+        /// <para>corresponds to:     -C, --compact.</para>
         /// </summary>
         public bool Compact { get; set; }
 
         /// <summary>
         /// Gets the list of directories to add to the classpath.
-        /// corresponds to:     -cp, -classpath, --classpath.
+        /// <para>corresponds to:     -cp, -classpath, --classpath.</para>
         /// </summary>
         public IList<DirectoryPath> ClassPath { get; private set; }
 
         /// <summary>
-        /// Gets or sets a value indicating:
-        /// base directory containing the document and resources
-        /// Default: directory of source file.
-        /// corresponds to:     -B, --base-dir.
+        /// Gets or sets a value indicating the
+        /// base directory containing the document and resources.
+        /// <para>Default: directory of source file.</para>
+        /// <para>corresponds to:     -B, --base-dir.</para>
         /// </summary>
         public DirectoryPath BaseDir { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to:
+        /// Gets or sets a value indicating whether to
         /// set output format backend.
-        /// Default: html5
-        /// corresponds to:     -b, --backend.
+        /// <para>Default: html5.</para>
+        /// <para>corresponds to:     -b, --backend.</para>
         /// </summary>
         public string Backend { get; set; }
 
         /// <summary>
-        /// Gets the list of attributes to set on the document
-        /// Default: []
-        /// corresponds to:    -a, --attribute.
+        /// Gets the list of attributes to set on the document.
+        /// <para>Default: [].</para>
+        /// <para>corresponds to:    -a, --attribute.</para>
         /// </summary>
         public IDictionary<string, string> Attributes { get; private set; }
 
