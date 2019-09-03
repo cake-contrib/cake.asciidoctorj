@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.AsciiDoctorJ/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.AsciiDoctorJ/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.AsciiDoctorJ - Cake.AsciiDoctorJ</title>
+        <title>Cake.AsciiDoctorJ - API - BuiltinBackend.Html Field</title>
         <link href="/Cake.AsciiDoctorJ/assets/css/highlight.css" rel="stylesheet">
-        <link href="/Cake.AsciiDoctorJ/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/Cake.AsciiDoctorJ/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/Cake.AsciiDoctorJ/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/Cake.AsciiDoctorJ/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.AsciiDoctorJ/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.AsciiDoctorJ/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/Cake.AsciiDoctorJ/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Cake.AsciiDoctorJ/assets/css/override.css" rel="stylesheet" />
+        <link href="/Cake.AsciiDoctorJ/assets/css/override.css" rel="stylesheet">
         <script src="/Cake.AsciiDoctorJ/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/Cake.AsciiDoctorJ/assets/js/bootstrap.min.js"></script>        
         <script src="/Cake.AsciiDoctorJ/assets/js/app.min.js"></script>         
@@ -31,7 +29,7 @@
 
         
     </head>
-    <body class="hold-transition wyam layout-boxed layout-top-nav no-gutter">    
+    <body class="hold-transition wyam layout-boxed  ">    
         <div class="top-banner"></div>
         <div class="wrapper with-container">
             <!-- Header -->
@@ -43,6 +41,10 @@
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
                                         
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -54,7 +56,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li><a href="/Cake.AsciiDoctorJ/api">API</a></li>
+                                    <li class="active"><a href="/Cake.AsciiDoctorJ/api">API</a></li>
  
                         </ul>       
                     </div>
@@ -65,19 +67,84 @@
             </header>
             
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar hidden">
+            <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.AsciiDoctorJ/tree/develop/docs/input/index.cshtml"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Value">Constant Value</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
                                      
-                    
+                    	
+	    <script src="/Cake.AsciiDoctorJ/assets/js/lunr.min.js"></script>
+    <script src="/Cake.AsciiDoctorJ/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
 
                     <ul class="sidebar-menu">
                         
+			<li class="header">Namespace</li>
+		<li><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ">Cake<wbr>.AsciiDoctorJ</a></li>
+		<li class="header">Type</li>
+		<li><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend">BuiltinBackend</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Field Members</li>
+				<li><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend/A932FDD8">DocBook</a></li>
+				<li><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend/D0CD632B">DocBook5</a></li>
+				<li class="selected"><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend/A6B069C8">Html</a></li>
+				<li><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend/C344CCBB">Html5</a></li>
+				<li><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend/946822F0">Manpage</a></li>
+				<li><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend/887BB8D9">Xhtml</a></li>
+				<li><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend/C7980B67">Xhtml5</a></li>
+
 
                     </ul>
                             
@@ -90,18 +157,59 @@
 
 
 
-		<section class="content-header">
-			<h1>Cake.AsciiDoctorJ</h1>
-		</section>
-	<section class="content">
-		
-<div class="container">				
-	<h1>What is it?</h1>
-    <p>
-        Cake.AsciiDoctorJ is an Addin for <a href="http://cakebuild.net/">Cake</a> to use <a href="https://github.com/asciidoctor/asciidoctorj">AsciiDoctorJ</a>.
-    </p>
-</div>
-	</section>
+<section class="content-header">
+			<h3><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend">BuiltinBackend</a>.</h3>
+	<h1>Html <small>Field</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    html backend
+    </div>
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<dl class="dl-horizontal">				
+
+						<dt>Namespace</dt>
+						<dd><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ">Cake<wbr>.AsciiDoctorJ</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend">BuiltinBackend</a></dd>		
+				</dl>
+			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>Html</code></pre>
+
+
+
+
+
+	<h1 id="Value">Constant Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Value</th>
+						<th>Type</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>0</td>
+					<td>Int32</td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
                 
             </div>           
             
@@ -186,5 +294,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
