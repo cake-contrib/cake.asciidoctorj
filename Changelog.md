@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
+- (GH-6) update cake.recipe to 1.1.1
 - (GH-5) included the cake-contrib-icon in package
 
 
