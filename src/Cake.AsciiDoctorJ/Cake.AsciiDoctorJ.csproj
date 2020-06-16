@@ -17,12 +17,13 @@
         <Authors>Nils Andresen</Authors>
         <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
         <Description>makes [asciidoctorj](https://github.com/asciidoctor/asciidoctorj) available as a tool in [cake](https://cakebuild.net/)</Description>
-        <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
+        <PackageIconUrl></PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://cake-contrib.github.io/Cake.AsciiDoctorJ</PackageProjectUrl>
         <PackageTags>cake;addin;asciidoctorj</PackageTags>
         <RepositoryUrl>https://github.com/cake-contrib/Cake.AsciiDoctorJ.git</RepositoryUrl>
         <PackageReleaseNotes>https://github.com/cake-contrib/Cake.AsciiDoctorJ/releases/tag/$(Version)</PackageReleaseNotes>
+        <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -31,5 +32,12 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="icon.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 </Project>
