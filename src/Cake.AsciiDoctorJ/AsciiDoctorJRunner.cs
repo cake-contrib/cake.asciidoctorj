@@ -1,13 +1,14 @@
+using System;
+using System.Collections.Generic;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.Core.Tooling;
+
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Cake.AsciiDoctorJ.Tests")]
 
 namespace Cake.AsciiDoctorJ
 {
-    using System;
-    using System.Collections.Generic;
-    using Cake.Core;
-    using Cake.Core.IO;
-    using Cake.Core.Tooling;
-
     /// <summary>
     /// This is the runner. <see cref="Tool{TSettings}"/>.
     /// </summary>
@@ -30,12 +31,17 @@ namespace Cake.AsciiDoctorJ
         }
 
         /// <summary>
-        /// Runs the tool using an action to configure seetings.
+        /// Runs the tool using an action to configure settings.
         /// </summary>
         /// <param name="configure">The configuration action.</param>
-        internal void Run(Action<AsciiDoctorJRunnerSettings> configure = null)
+        /// <param name="settings">The settings.</param>
+        internal void Run(Action<AsciiDoctorJRunnerSettings> configure = null, AsciiDoctorJRunnerSettings settings = null)
         {
-            var settings = new AsciiDoctorJRunnerSettings();
+            if (settings == null)
+            {
+                settings = new AsciiDoctorJRunnerSettings();
+            }
+
             configure?.Invoke(settings);
             Run(settings);
         }
@@ -46,8 +52,13 @@ namespace Cake.AsciiDoctorJ
         /// <param name="settings">The settings.</param>
         internal void Run(AsciiDoctorJRunnerSettings settings)
         {
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
             var args = new ProcessArgumentBuilder();
-            settings?.Evaluate(args, environment);
+            settings.Evaluate(args, environment);
             Run(settings, args);
         }
 

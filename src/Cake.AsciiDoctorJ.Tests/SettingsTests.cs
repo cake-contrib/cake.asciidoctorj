@@ -1,94 +1,77 @@
+using FluentAssertions;
+using Xunit;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using Cake.AsciiDoctorJ.Tests.Fixtures;
+using System.Linq;
+using Cake.Core.IO;
+
 namespace Cake.AsciiDoctorJ.Tests
 {
-    using Cake.Core;
-    using Cake.Core.IO;
-    using NUnit.Framework;
-    using FluentAssertions;
-    using Cake.Testing;
-
-    [TestFixture]
-    [TestOf(typeof(AsciiDoctorJRunnerSettings))]
     public class SettingsTests
     {
-        private ICakeEnvironment environment;
-
-        [SetUp]
-        public void Setup()
+        [Theory]
+        [ClassData(typeof(TestData))]
+        public void Should_convert_all_setters_to_arguments(Action<AsciiDoctorJRunnerSettings> setFlag, string expectedParam)
         {
-            environment = FakeEnvironment.CreateWindowsEnvironment();
-        }
-
-        [TestCase("Version", "--version")]
-        [TestCase("Verbose", "--verbose")]
-        [TestCase("TimingsMode", "--timings")]
-        [TestCase("SectionNumbers", "--section-numbers")]
-        [TestCase("Require", "--require")]
-        [TestCase("Quiet", "--quiet")]
-        [TestCase("SuppressHeaderAndFooter", "--no-header-footer")]
-        [TestCase("Compact", "--compact")]
-        public void Should_Convert_All_Flags_To_Arguments(string propertyName, string expectedParam)
-        {
-            var args = new ProcessArgumentBuilder();
+            var fixture = new AsciiDoctorJRunnerSettingsExtensionsFixture();
             var sut = new AsciiDoctorJRunnerSettings();
 
-            var prop = typeof(AsciiDoctorJRunnerSettings).GetProperty(propertyName);
-            prop.SetValue(sut, true);
+            setFlag(sut);
 
-            sut.Evaluate(args, environment);
-
-            var actual = args.Render();
+            var actual = fixture.EvaluateArgs(sut);
             actual.Should().Contain(expectedParam);
         }
 
-        [TestCase(SafeMode.Safe, "--safe-mode safe")]
-        [TestCase(SafeMode.Unsafe, "--safe-mode unsafe")]
-        [TestCase(SafeMode.Secure, "--safe-mode secure")]
-        [TestCase(SafeMode.Server, "--safe-mode server")]
-        public void Should_Convert_SafeMode_Settings_To_Arguments(SafeMode mode, string expected)
+        private class TestData : IEnumerable<object[]>
         {
-            var args = new ProcessArgumentBuilder();
-            var sut = new AsciiDoctorJRunnerSettings
+            private IEnumerable<(Action<AsciiDoctorJRunnerSettings>, string)> GetTestData()
             {
-                SafeMode = mode
-            };
+                // flags
+                yield return (s => s.Version = true, "--version");
+                yield return (s => s.Verbose = true, "--verbose");
+                yield return (s => s.TimingsMode = true, "--timings");
+                yield return (s => s.SectionNumbers = true, "--section-numbers");
+                yield return (s => s.Require = true, "--require");
+                yield return (s => s.Quiet = true, "--quiet");
+                yield return (s => s.SuppressHeaderAndFooter = true, "--no-header-footer");
+                yield return (s => s.Compact = true, "--compact");
 
-            sut.Evaluate(args, environment);
+                // safemode-arg
+                yield return (s => s.SafeMode = SafeMode.Safe, "--safe-mode safe");
+                yield return (s => s.SafeMode = SafeMode.Unsafe, "--safe-mode unsafe");
+                yield return (s => s.SafeMode = SafeMode.Secure, "--safe-mode secure");
+                yield return (s => s.SafeMode = SafeMode.Server, "--safe-mode server");
 
-            var actual = args.Render();
-            actual.Should().Contain(expected);
-        }
+                // eruby-arg
+                yield return (s => s.ERuby = ERuby.Erb, "--eruby erb");
+                yield return (s => s.ERuby = ERuby.Erubis, "--eruby erubis");
 
-        [TestCase(ERuby.Erb, "--eruby erb")]
-        [TestCase(ERuby.Erubis, "--eruby erubis")]
-        public void Should_Convert_Eruby_Settings_To_Arguments(ERuby eruby, string expected)
-        {
-            var args = new ProcessArgumentBuilder();
-            var sut = new AsciiDoctorJRunnerSettings
+                // doctype-arg
+                yield return (s => s.DocType = DocType.Article, "--doctype article");
+                yield return (s => s.DocType = DocType.Book, "--doctype book");
+                yield return (s => s.DocType = DocType.Inline, "--doctype inline");
+
+                // misc args
+                yield return (s => s.TemplateEngine = "some-engine", "--template-engine some-engine");
+                yield return (s => s.TemplateDir = new DirectoryPath("/foo"), "--template-dir \"/foo\"");
+                yield return (s => s.Output = new FilePath("/foo.pdf"), "--out-file \"/foo.pdf\"");
+                yield return (s => s.LoadPath.Add(new DirectoryPath("/foo")), "--load-path \"/foo\"");
+                yield return (s => s.DestinationDir = new DirectoryPath("/foo"), "--destination-dir \"/foo\"");
+                yield return (s => s.ClassPath.Add(new DirectoryPath("/foo")), "--classpath \"/foo\"");
+                yield return (s => s.BaseDir = new DirectoryPath("/foo"), "--base-dir \"/foo\"");
+                yield return (s => s.Backend = "pdf", "--backend pdf");
+                yield return (s => s.Attributes.Add("foo", "bar"), "--attribute foo=bar");
+                yield return (s => s.InputFiles.Add(new FilePath("/foo.adoc")), "\"/foo.adoc\"");
+            }
+
+            public IEnumerator<object[]> GetEnumerator()
             {
-                ERuby = eruby
-            };
+                return GetTestData().Select(x => new[] { (object)x.Item1, x.Item2 }).GetEnumerator();
+            }
 
-            sut.Evaluate(args, environment);
-
-            var actual = args.Render();
-            actual.Should().Contain(expected);
-        }
-
-        [TestCase(DocType.Article, "--doctype article")]
-        [TestCase(DocType.Book, "--doctype book")]
-        [TestCase(DocType.Inline, "--doctype inline")]
-        public void Should_Convert_DocType_Settings_To_Arguments(DocType type, string expected)
-        {
-            var args = new ProcessArgumentBuilder();
-            var sut = new AsciiDoctorJRunnerSettings
-            {
-                DocType = type
-            };
-
-            sut.Evaluate(args, environment);
-
-            var actual = args.Render();
-            actual.Should().Contain(expected);
+            IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
     }
 }
