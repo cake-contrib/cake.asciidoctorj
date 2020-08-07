@@ -39,28 +39,28 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"BuiltinBackend",
-            content:"BuiltinBackend",
+            title:"SafeMode",
+            content:"SafeMode",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend',
-            title:"BuiltinBackend",
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/SafeMode',
+            title:"SafeMode",
             description:""
         }
     );
     a(
         {
             id:1,
-            title:"DocType",
-            content:"DocType",
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            content:"AsciiDoctorJRunnerSettingsExtensions",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
+            title:"AsciiDoctorJRunnerSettingsExtensions",
             description:""
         }
     );
@@ -81,6 +81,20 @@ var searchModule = function() {
     a(
         {
             id:3,
+            title:"DocType",
+            content:"DocType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
             title:"AsciiDoctorJAliases",
             content:"AsciiDoctorJAliases",
             description:'',
@@ -94,29 +108,15 @@ var searchModule = function() {
     );
     a(
         {
-            id:4,
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            content:"AsciiDoctorJRunnerSettingsExtensions",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            description:""
-        }
-    );
-    a(
-        {
             id:5,
-            title:"SafeMode",
-            content:"SafeMode",
+            title:"BuiltinBackend",
+            content:"BuiltinBackend",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/SafeMode',
-            title:"SafeMode",
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend',
+            title:"BuiltinBackend",
             description:""
         }
     );
