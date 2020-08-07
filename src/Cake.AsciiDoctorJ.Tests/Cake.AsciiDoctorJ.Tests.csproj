@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+        <TargetFrameworks>netcoreapp2.1</TargetFrameworks>
         <TargetFrameworks Condition="'$(OS)'!='Unix'">$(TargetFrameworks);net461</TargetFrameworks>
+        <CodeAnalysisRuleSet>..\Cake.AsciiDoctorJ.ruleset</CodeAnalysisRuleSet>
 
         <IsPackable>false</IsPackable>
-        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+
+        <RootNamespace>Cake.AsciiDoctorJ.Tests</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.0|AnyCPU'">
@@ -19,10 +21,19 @@
     <ItemGroup>
         <PackageReference Include="Cake.Testing" Version="0.33.0" />
         <PackageReference Include="FluentAssertions" Version="5.8.0" />
+        <PackageReference Include="FluentAssertions.Analyzers" Version="0.11.4" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />
         <PackageReference Include="Moq" Version="4.10.1" />
-        <PackageReference Include="nunit" Version="3.12.0" />
-        <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+        <PackageReference Include="Text.Analyzers" Version="2.6.4">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="xunit.analyzers" Version="0.10.0" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.2">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="../Cake.AsciiDoctorJ/Cake.AsciiDoctorJ.csproj" />

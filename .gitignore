@@ -51,3 +51,6 @@ docs/input/tasks/*
 
 # Wyam related
 config.wyam.*
+
+#Testresults
+[Tt]est[Rr]esults
