@@ -1,28 +1,64 @@
+using System;
+
+using Cake.AsciiDoctorJ.Tests.Fixtures;
+
+using FluentAssertions;
+
+using Xunit;
+
 namespace Cake.AsciiDoctorJ.Tests
 {
-    using System;
-    using Cake.Core;
-    using FluentAssertions;
-    using Moq;
-    using NUnit.Framework;
-
-    [TestFixture]
-    [TestOf(typeof(AsciiDoctorJAliases))]
     public class AsciiDoctorJAliasesTests
     {
-        private ICakeContext context;
-
-        [SetUp]
-        public void Setup()
+        [Fact]
+        public void Should_throw_if_settings_are_null()
         {
-            context = new Mock<ICakeContext>().Object; // TODO: Is there nothin in Cake.Testing?!
+            var fixture = new AsciiDoctorJAliasesFixture();
+            fixture.GivenSettingsIsNull();
+
+            Action action = () => fixture.Run();
+            action.Should().Throw<ArgumentNullException>().WithMessage("*settings");
         }
 
-        [Test]
-        public void Should_Throw_If_Settings_Are_Null()
+        [Fact]
+        public void Should_not_throw_if_settings_are_set()
         {
-            Action action = () => AsciiDoctorJAliases.AsciiDoctorJ(context, (AsciiDoctorJRunnerSettings)null);
-            action.Should().Throw<ArgumentNullException>().WithMessage("*settings");
+            var fixture = new AsciiDoctorJAliasesFixture();
+
+            var actual = fixture.Run();
+
+            actual.Args.Should().Be("");
+        }
+
+        [Fact]
+        public void Should_not_throw_if_settings_are_null_but_called_fluently()
+        {
+            var fixture = new AsciiDoctorJAliasesFixture();
+            fixture.GivenSettingsIsNull();
+
+            var actual = fixture.RunFluent(x => { });
+
+            actual.Args.Should().Be("");
+        }
+
+        [Fact]
+        public void Should_throw_if_context_is_null()
+        {
+            var fixture = new AsciiDoctorJAliasesFixture();
+            fixture.GivenContextIsNull();
+
+            Action action = () => fixture.Run();
+            action.Should().Throw<ArgumentNullException>().WithMessage("*context");
+        }
+
+        [Fact]
+        public void Should_throw_if_context_is_null_called_fluently()
+        {
+            var fixture = new AsciiDoctorJAliasesFixture();
+            fixture.GivenContextIsNull();
+
+            Action action = () => fixture.RunFluent(x => { });
+            action.Should().Throw<ArgumentNullException>().WithMessage("*context");
         }
     }
 }

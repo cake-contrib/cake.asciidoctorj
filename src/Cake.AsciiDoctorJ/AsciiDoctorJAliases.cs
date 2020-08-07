@@ -1,13 +1,14 @@
+using System;
+
+using Cake.Core;
+using Cake.Core.Annotations;
+
 namespace Cake.AsciiDoctorJ
 {
-    using System;
-    using Cake.Core;
-    using Cake.Core.Annotations;
-
     /// <summary>
     /// <para>Functions to call <see href="https://asciidoctor.org/">AsciiDoctorJ</see>.</para>
     /// <para>
-    /// In order to use this addin add the following to your build.cake.
+    /// In order to use this add-in, add the following to your build.cake.
     /// <code><![CDATA[
     /// #addin "nuget:?package=Cake.AsciiDoctorJ"
     /// ]]></code>
@@ -16,7 +17,7 @@ namespace Cake.AsciiDoctorJ
     public static class AsciiDoctorJAliases
     {
         /// <summary>
-        /// Runs the tool using an action to configure seetings.
+        /// Runs the tool using an action to configure settings.
         /// </summary>
         /// <param name="context">The <see cref="ICakeContext"/>.</param>
         /// <param name="configure">An action to configure the <see cref="AsciiDoctorJRunnerSettings"/>.</param>

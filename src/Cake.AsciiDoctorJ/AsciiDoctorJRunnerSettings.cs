@@ -1,12 +1,12 @@
+using System;
+using System.Collections.Generic;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.Core.Tooling;
+
 namespace Cake.AsciiDoctorJ
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using Cake.Core;
-    using Cake.Core.IO;
-    using Cake.Core.Tooling;
-
     /// <summary>
     /// The settings to configure the run of <see href="https://asciidoctor.org/">AsciiDoctorJ</see>.
     /// </summary>
@@ -110,13 +110,13 @@ namespace Cake.AsciiDoctorJ
         /// <summary>
         /// Gets the list of input files to be processed.
         /// </summary>
-        public IList<FilePath> InputFiles { get; private set; }
+        public IList<FilePath> InputFiles { get; }
 
         /// <summary>
         /// Gets the list of directories to add to the $LOAD_PATH.
         /// <para>corresponds to: -I, --load-path.</para>
         /// </summary>
-        public IList<DirectoryPath> LoadPath { get; private set; }
+        public IList<DirectoryPath> LoadPath { get; }
 
         /// <summary>
         /// Gets or sets a value to
@@ -154,7 +154,7 @@ namespace Cake.AsciiDoctorJ
         /// Gets the list of directories to add to the classpath.
         /// <para>corresponds to:     -cp, -classpath, --classpath.</para>
         /// </summary>
-        public IList<DirectoryPath> ClassPath { get; private set; }
+        public IList<DirectoryPath> ClassPath { get; }
 
         /// <summary>
         /// Gets or sets a value indicating the
@@ -177,7 +177,7 @@ namespace Cake.AsciiDoctorJ
         /// <para>Default: [].</para>
         /// <para>corresponds to:    -a, --attribute.</para>
         /// </summary>
-        public IDictionary<string, string> Attributes { get; private set; }
+        public IDictionary<string, string> Attributes { get; }
 
         /// <summary>
         /// Processes the given settings and modifies the <see cref="ProcessArgumentBuilder"/>.
@@ -218,7 +218,10 @@ namespace Cake.AsciiDoctorJ
 
             if (SafeMode.HasValue)
             {
-                args.Append("--safe-mode " + Enum.GetName(typeof(SafeMode), SafeMode.Value).ToLower(CultureInfo.InvariantCulture));
+                // ReSharper disable PossibleNullReferenceException
+                args.Append("--safe-mode " + Enum.GetName(typeof(SafeMode), SafeMode.Value).ToLowerInvariant());
+
+                // ReSharper enable PossibleNullReferenceException
             }
 
             if (Require)
@@ -248,17 +251,23 @@ namespace Cake.AsciiDoctorJ
 
             if (ERuby.HasValue)
             {
-                args.Append("--eruby " + Enum.GetName(typeof(ERuby), ERuby.Value).ToLower(CultureInfo.InvariantCulture));
+                // ReSharper disable PossibleNullReferenceException
+                args.Append("--eruby " + Enum.GetName(typeof(ERuby), ERuby.Value).ToLowerInvariant());
+
+                // ReSharper enable PossibleNullReferenceException
             }
 
             if (DocType.HasValue)
             {
-                args.Append("--doctype " + Enum.GetName(typeof(DocType), DocType.Value).ToLower(CultureInfo.InvariantCulture));
+                args.Append("--doctype " + Enum.GetName(typeof(DocType), DocType.Value).ToLowerInvariant());
             }
 
             if (DestinationDir != null)
             {
+                // ReSharper disable PossibleNullReferenceException
                 args.Append("--destination-dir " + DestinationDir.MakeAbsolute(environment).FullPath.Quote());
+
+                // ReSharper enable PossibleNullReferenceException
             }
 
             if (Compact)

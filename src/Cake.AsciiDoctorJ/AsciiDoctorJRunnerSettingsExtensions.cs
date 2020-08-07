@@ -1,10 +1,10 @@
+using System;
+using System.Collections.Generic;
+
+using Cake.Core.IO;
+
 namespace Cake.AsciiDoctorJ
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using Cake.Core.IO;
-
     /// <summary>
     /// Extensions for fluent writing of <see cref="AsciiDoctorJRunnerSettings"/>.
     /// </summary>
@@ -305,7 +305,10 @@ namespace Cake.AsciiDoctorJ
         /// <returns>The reference to the <see cref="AsciiDoctorJRunnerSettings"/>.</returns>
         public static AsciiDoctorJRunnerSettings WithBuiltinBackend(this AsciiDoctorJRunnerSettings @this, BuiltinBackend backend)
         {
-            @this.Backend = Enum.GetName(typeof(BuiltinBackend), backend).ToLower(CultureInfo.InvariantCulture);
+            // ReSharper disable PossibleNullReferenceException
+            @this.Backend = Enum.GetName(typeof(BuiltinBackend), backend).ToLowerInvariant();
+
+            // ReSharper enable PossibleNullReferenceException
             return @this;
         }
 
