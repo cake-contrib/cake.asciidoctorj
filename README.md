@@ -1,12 +1,13 @@
 # Cake.AsciiDoctorJ
 
 [![standard-readme compliant][]][standard-readme]
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors)
+[![All Contributors][all-contributors-badge]](#contributors)
+[![Contributor Covenant][contrib-covenantimg]][contrib-covenant]
 [![Appveyor build][appveyorimage]][appveyor]
 [![Codecov Report][codecovimage]][codecov]
 [![NuGet package][nugetimage]][nuget]
 
-> makes [asciidoctorj](https://github.com/asciidoctor/asciidoctorj) available as a tool in [cake](https://cakebuild.net/)
+makes [asciidoctorj](https://github.com/asciidoctor/asciidoctorj) available as a tool in [cake](https://cakebuild.net/)
 
 ## Table of Contents
 
@@ -64,11 +65,13 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 [MIT License © Nils Andresen][license]
 
 [all-contributors]: https://github.com/all-contributors/all-contributors
+[all-contributors-badge]: https://img.shields.io/github/all-contributors/cake-contrib/cake.AsciiDoctorJ/develop?&style=flat-square
 [appveyor]: https://ci.appveyor.com/project/cakecontrib/cake-asciidoctorj
 [appveyorimage]: https://img.shields.io/appveyor/ci/cakecontrib/cake-asciidoctorj.svg?logo=appveyor&style=flat-square
 [codecov]: https://codecov.io/gh/cake-contrib/Cake.AsciiDoctorJ
 [codecovimage]: https://img.shields.io/codecov/c/github/cake-contrib/Cake.AsciiDoctorJ.svg?logo=codecov&style=flat-square
-[contrib-covenant]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
+[contrib-covenant]: https://www.contributor-covenant.org/version/2/0/code_of_conduct/
+[contrib-covenantimg]: https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg
 [contributing]: CONTRIBUTING.md
 [emoji-key]: https://allcontributors.org/docs/en/emoji-key
 [maintainer]: https://github.com/nils-a
