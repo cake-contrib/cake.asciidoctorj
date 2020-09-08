@@ -39,34 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            content:"AsciiDoctorJRunnerSettingsExtensions",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
-            title:"AsciiDoctorJRunnerSettings",
-            content:"AsciiDoctorJRunnerSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
-            title:"AsciiDoctorJRunnerSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
             title:"ERuby",
             content:"ERuby",
             description:'',
@@ -80,7 +52,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:3,
+            id:1,
             title:"SafeMode",
             content:"SafeMode",
             description:'',
@@ -89,6 +61,34 @@ var searchModule = function() {
         {
             url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/SafeMode',
             title:"SafeMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:2,
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            content:"AsciiDoctorJRunnerSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
+            title:"DocType",
+            content:"DocType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
             description:""
         }
     );
@@ -109,6 +109,20 @@ var searchModule = function() {
     a(
         {
             id:5,
+            title:"AsciiDoctorJRunnerSettings",
+            content:"AsciiDoctorJRunnerSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
+            title:"AsciiDoctorJRunnerSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
             title:"AsciiDoctorJAliases",
             content:"AsciiDoctorJAliases",
             description:'',
@@ -117,20 +131,6 @@ var searchModule = function() {
         {
             url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
             title:"AsciiDoctorJAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:6,
-            title:"DocType",
-            content:"DocType",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
             description:""
         }
     );
