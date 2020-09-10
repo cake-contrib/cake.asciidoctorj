@@ -14,6 +14,7 @@ namespace Cake.AsciiDoctorJ
     /// ]]></code>
     /// </para>
     /// </summary>
+    [CakeAliasCategory("asciidoctorj")]
     public static class AsciiDoctorJAliases
     {
         /// <summary>

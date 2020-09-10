@@ -7,6 +7,7 @@ BuildParameters.SetParameters(
     buildSystem: BuildSystem,
     sourceDirectoryPath: "./src",
     title: "Cake.AsciiDoctorJ",
+    masterBranchName: "main",
     repositoryOwner: "cake-contrib",
     repositoryName: "Cake.AsciiDoctorJ",
     appVeyorAccountName: "cakecontrib",
