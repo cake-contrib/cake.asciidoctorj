@@ -11,6 +11,7 @@ BuildParameters.SetParameters(
     repositoryOwner: "cake-contrib",
     repositoryName: "Cake.AsciiDoctorJ",
     appVeyorAccountName: "cakecontrib",
+    shouldPublishMyGet: false, // currently broken
     shouldRunGitVersion: true,
     shouldExecuteGitLink: false,
     shouldRunCodecov: true,
