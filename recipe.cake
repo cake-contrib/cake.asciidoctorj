@@ -12,7 +12,6 @@ BuildParameters.SetParameters(
     repositoryName: "Cake.AsciiDoctorJ",
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
-    shouldPublishMyGet: false, // currently broken
     shouldUseDeterministicBuilds: true);
 
 BuildParameters.PrintParameters(Context);
