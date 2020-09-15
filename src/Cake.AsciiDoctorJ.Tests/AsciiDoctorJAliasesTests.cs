@@ -17,7 +17,7 @@ namespace Cake.AsciiDoctorJ.Tests
             fixture.GivenSettingsIsNull();
 
             Action action = () => fixture.Run();
-            action.Should().Throw<ArgumentNullException>().WithMessage("*settings");
+            action.Should().Throw<ArgumentNullException>().WithMessage("*settings*");
         }
 
         [Fact]
@@ -48,7 +48,7 @@ namespace Cake.AsciiDoctorJ.Tests
             fixture.GivenContextIsNull();
 
             Action action = () => fixture.Run();
-            action.Should().Throw<ArgumentNullException>().WithMessage("*context");
+            action.Should().Throw<ArgumentNullException>().WithMessage("*context*");
         }
 
         [Fact]
@@ -58,7 +58,7 @@ namespace Cake.AsciiDoctorJ.Tests
             fixture.GivenContextIsNull();
 
             Action action = () => fixture.RunFluent(x => { });
-            action.Should().Throw<ArgumentNullException>().WithMessage("*context");
+            action.Should().Throw<ArgumentNullException>().WithMessage("*context*");
         }
     }
 }
