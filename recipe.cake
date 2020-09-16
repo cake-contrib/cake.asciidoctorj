@@ -1,4 +1,4 @@
-#load nuget:https://pkgs.dev.azure.com/cake-contrib/Home/_packaging/addins%40Local/nuget/v3/index.json?package=Cake.Recipe&version=2.0.0-alpha0461&prerelease
+#load nuget:https://pkgs.dev.azure.com/cake-contrib/Home/_packaging/addins%40Local/nuget/v3/index.json?package=Cake.Recipe&version=2.0.0-alpha0471&prerelease
 
 Environment.SetVariableNames();
 
@@ -9,7 +9,7 @@ BuildParameters.SetParameters(
     title: "Cake.AsciiDoctorJ",
     masterBranchName: "main",
     repositoryOwner: "cake-contrib",
-    repositoryName: "Cake.AsciiDoctorJ",
+    repositoryName: "cake.asciidoctorj",
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
     shouldUseDeterministicBuilds: true);
