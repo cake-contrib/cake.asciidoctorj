@@ -39,20 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"SafeMode",
-            content:"SafeMode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/SafeMode',
-            title:"SafeMode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
             title:"ERuby",
             content:"ERuby",
             description:'',
@@ -66,7 +52,35 @@ var searchModule = function() {
     );
     a(
         {
+            id:1,
+            title:"SafeMode",
+            content:"SafeMode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/SafeMode',
+            title:"SafeMode",
+            description:""
+        }
+    );
+    a(
+        {
             id:2,
+            title:"AsciiDoctorJAliases",
+            content:"AsciiDoctorJAliases",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
+            title:"AsciiDoctorJAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
             title:"DocType",
             content:"DocType",
             description:'',
@@ -75,20 +89,6 @@ var searchModule = function() {
         {
             url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/DocType',
             title:"DocType",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
-            title:"BuiltinBackend",
-            content:"BuiltinBackend",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend',
-            title:"BuiltinBackend",
             description:""
         }
     );
@@ -123,14 +123,14 @@ var searchModule = function() {
     a(
         {
             id:6,
-            title:"AsciiDoctorJAliases",
-            content:"AsciiDoctorJAliases",
+            title:"BuiltinBackend",
+            content:"BuiltinBackend",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
-            title:"AsciiDoctorJAliases",
+            url:'/Cake.AsciiDoctorJ/api/Cake.AsciiDoctorJ/BuiltinBackend',
+            title:"BuiltinBackend",
             description:""
         }
     );
