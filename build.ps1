@@ -4,7 +4,7 @@ function Run([string[]]$arguments) {
 	$cmd = @("& dotnet")
 	$cmd += $arguments
 	$cmdLine = $cmd -join " "
-	Write-Verbose "> $cmdLine"
+	Write-Host "> $cmdLine"
 	Invoke-Expression $cmdLine
 
 	if ($LASTEXITCODE -ne 0) {
