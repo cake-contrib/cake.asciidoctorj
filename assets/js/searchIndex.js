@@ -39,14 +39,14 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"AsciiDoctorJRunnerSettings",
-            content:"AsciiDoctorJRunnerSettings",
+            title:"ERuby",
+            content:"ERuby",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
-            title:"AsciiDoctorJRunnerSettings",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
+            title:"ERuby",
             description:""
         }
     );
@@ -81,20 +81,6 @@ var searchModule = function() {
     a(
         {
             id:3,
-            title:"ERuby",
-            content:"ERuby",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
-            title:"ERuby",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
             title:"DocType",
             content:"DocType",
             description:'',
@@ -108,21 +94,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:5,
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            content:"AsciiDoctorJRunnerSettingsExtensions",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            description:""
-        }
-    );
-    a(
-        {
-            id:6,
+            id:4,
             title:"AsciiDoctorJAliases",
             content:"AsciiDoctorJAliases",
             description:'',
@@ -131,6 +103,34 @@ var searchModule = function() {
         {
             url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
             title:"AsciiDoctorJAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"AsciiDoctorJRunnerSettings",
+            content:"AsciiDoctorJRunnerSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
+            title:"AsciiDoctorJRunnerSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            content:"AsciiDoctorJRunnerSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
+            title:"AsciiDoctorJRunnerSettingsExtensions",
             description:""
         }
     );
