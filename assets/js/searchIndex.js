@@ -53,34 +53,20 @@ var searchModule = function() {
     a(
         {
             id:1,
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            content:"AsciiDoctorJRunnerSettingsExtensions",
+            title:"SafeMode",
+            content:"SafeMode",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
-            title:"AsciiDoctorJRunnerSettingsExtensions",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
+            title:"SafeMode",
             description:""
         }
     );
     a(
         {
             id:2,
-            title:"ERuby",
-            content:"ERuby",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
-            title:"ERuby",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
             title:"AsciiDoctorJAliases",
             content:"AsciiDoctorJAliases",
             description:'',
@@ -94,15 +80,29 @@ var searchModule = function() {
     );
     a(
         {
-            id:4,
-            title:"DocType",
-            content:"DocType",
+            id:3,
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            content:"AsciiDoctorJRunnerSettingsExtensions",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
+            title:"ERuby",
+            content:"ERuby",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
+            title:"ERuby",
             description:""
         }
     );
@@ -123,14 +123,14 @@ var searchModule = function() {
     a(
         {
             id:6,
-            title:"SafeMode",
-            content:"SafeMode",
+            title:"DocType",
+            content:"DocType",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
-            title:"SafeMode",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
             description:""
         }
     );
