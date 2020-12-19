@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=1.1.2
+#load nuget:?package=Cake.Recipe&version=2.1.0
 
 Environment.SetVariableNames();
 
@@ -9,14 +9,10 @@ BuildParameters.SetParameters(
     title: "Cake.AsciiDoctorJ",
     masterBranchName: "main",
     repositoryOwner: "cake-contrib",
-    repositoryName: "Cake.AsciiDoctorJ",
+    repositoryName: "cake.asciidoctorj",
     appVeyorAccountName: "cakecontrib",
-    shouldPublishMyGet: false, // currently broken
-    shouldRunGitVersion: true,
-    shouldExecuteGitLink: false,
-    shouldRunCodecov: true,
-    shouldDeployGraphDocumentation: false,
-    shouldRunDotNetCorePack: true);
+    shouldRunDotNetCorePack: true,
+    shouldUseDeterministicBuilds: true);
 
 BuildParameters.PrintParameters(Context);
 

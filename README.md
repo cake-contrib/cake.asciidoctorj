@@ -61,11 +61,12 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://www.nils-andresen.de/"><img src="https://avatars3.githubusercontent.com/u/349188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.AsciiDoctorJ/commits?author=nils-a" title="Code">💻</a> <a href="https://github.com/cake-contrib/Cake.AsciiDoctorJ/commits?author=nils-a" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.nils-andresen.de/"><img src="https://avatars3.githubusercontent.com/u/349188?v=4" width="100px;" alt=""/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=nils-a" title="Code">💻</a> <a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=nils-a" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://twitter.com/hereispascal"><img src="https://avatars1.githubusercontent.com/u/2190718?v=4" width="100px;" alt=""/><br /><sub><b>Pascal Berger</b></sub></a><br /><a href="https://github.com/cake-contrib/cake.asciidoctorj/issues?q=author%3Apascalberger" title="Bug reports">🐛</a> <a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=pascalberger" title="Code">💻</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-restore -->
+<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
