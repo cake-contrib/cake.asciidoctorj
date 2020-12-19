@@ -14,12 +14,23 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "pascalberger",
+      "name": "Pascal Berger",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2190718?v=4",
+      "profile": "https://twitter.com/hereispascal",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "projectName": "Cake.AsciiDoctorJ",
+  "projectName": "cake.asciidoctorj",
   "projectOwner": "cake-contrib",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "commitConvention": "none"
+  "commitConvention": "none",
+  "skipCi": true
 }
