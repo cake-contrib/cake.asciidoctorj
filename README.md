@@ -13,6 +13,7 @@ makes [asciidoctorj](https://github.com/asciidoctor/asciidoctorj) available as a
 
 - [Install](#install)
 - [Usage](#usage)
+- [Discussion](#discussion)
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
   - [Contributors](#contributors)
@@ -36,6 +37,11 @@ Task("MyTask").Does(() => {
 	  .WithDestinationDir(distDir));
 });
 ```
+## Discussion
+
+If you have questions, search for an existing one, or create a new discussion on the Cake GitHub repository, using the `extension-q-a` category.
+
+[![Join in the discussion on the Cake repository](https://img.shields.io/badge/GitHub-Discussions-green?logo=github)](https://github.com/cake-build/cake/discussions)
 
 ## Maintainer
 
