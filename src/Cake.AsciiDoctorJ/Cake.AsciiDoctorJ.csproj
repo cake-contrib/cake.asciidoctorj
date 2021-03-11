@@ -25,7 +25,7 @@
         <Description>makes [asciidoctorj](https://github.com/asciidoctor/asciidoctorj) available as a tool in [cake](https://cakebuild.net/)</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://cake-contrib.github.io/cake.asciidoctorj</PackageProjectUrl>
-        <PackageTags>cake;addin;asciidoctorj</PackageTags>
+        <PackageTags>cake,build,cake-build,addin,script,asciidoctorj</PackageTags>
         <RepositoryUrl>https://github.com/cake-contrib/Cake.AsciiDoctorJ.git</RepositoryUrl>
         <PackageReleaseNotes>https://github.com/cake-contrib/Cake.AsciiDoctorJ/releases/tag/$(Version)</PackageReleaseNotes>
         <PackageIcon>icon.png</PackageIcon>
