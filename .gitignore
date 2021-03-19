@@ -54,3 +54,4 @@ config.wyam.*
 #Testresults
 [Tt]est[Rr]esults
 .history/
+.idea/
