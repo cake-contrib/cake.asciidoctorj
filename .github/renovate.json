@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [ "github>nils-a/renovate-config" ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["cake.tool"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["cake.core"],
+      "enabled": false
+    }
+  ]
+}
