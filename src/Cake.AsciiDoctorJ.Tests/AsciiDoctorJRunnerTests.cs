@@ -4,7 +4,7 @@ using Cake.AsciiDoctorJ.Tests.Fixtures;
 using Cake.Core;
 using Cake.Testing;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -23,7 +23,7 @@ namespace Cake.AsciiDoctorJ.Tests
                 fixture.Run();
             };
 
-            result.Should().Throw<ArgumentNullException>();
+            result.ShouldThrow<ArgumentNullException>();
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Cake.AsciiDoctorJ.Tests
             const string expectedMessage = "Could not locate executable";
 
             Action result = () => fixture.Run();
-            result.Should().Throw<CakeException>().Where(ex => ex.Message.Contains(expectedMessage));
+            result.ShouldThrow<CakeException>().Message.ShouldContain(expectedMessage);
         }
 
         [Fact]
@@ -44,7 +44,7 @@ namespace Cake.AsciiDoctorJ.Tests
 
             var actual = fixture.RunFluent(x => { });
 
-            actual.Args.Should().Be("");
+            actual.Args.ShouldBe("");
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace Cake.AsciiDoctorJ.Tests
 
             var actual = fixture.RunFluent(x => { });
 
-            actual.Args.Should().Be("");
+            actual.Args.ShouldBe("");
         }
 
         [Fact]
@@ -68,7 +68,7 @@ namespace Cake.AsciiDoctorJ.Tests
 
             var actual = fixture.RunFluent(null);
 
-            actual.Args.Should().Be("");
+            actual.Args.ShouldBe("");
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using Cake.AsciiDoctorJ.Tests.Fixtures;
 using Cake.Core.IO;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -24,7 +24,7 @@ namespace Cake.AsciiDoctorJ.Tests
             setFlag(sut);
 
             var actual = fixture.EvaluateArgs(sut);
-            actual.Should().Contain(expectedParam);
+            actual.ShouldContain(expectedParam);
         }
 
         [Theory]
@@ -41,11 +41,11 @@ namespace Cake.AsciiDoctorJ.Tests
 
             if (!(actual is string) && actual is IEnumerable enumerable)
             {
-                enumerable.Should().BeEquivalentTo((IEnumerable)expected);
+                enumerable.ShouldBe((IEnumerable)expected);
             }
             else
             {
-                actual.Should().Be(expected);
+                actual.ShouldBe(expected);
             }
         }
 
@@ -57,7 +57,7 @@ namespace Cake.AsciiDoctorJ.Tests
 
             var actual = fluentMethod(sut);
 
-            actual.Should().Be(sut);
+            actual.ShouldBe(sut);
         }
 
         private class TestData : IEnumerable<object[]>
@@ -181,7 +181,7 @@ namespace Cake.AsciiDoctorJ.Tests
 
             public IEnumerator<object[]> GetEnumerator()
             {
-                return GetTestData().Select(x => new[] { (object)x.Item1, x.Item2, x.Item3 }).GetEnumerator();
+                return GetTestData().Select(x => new[] { x.Item1, x.Item2, x.Item3 }).GetEnumerator();
             }
 
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
