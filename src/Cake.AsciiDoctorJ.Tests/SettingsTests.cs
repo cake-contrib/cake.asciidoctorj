@@ -1,4 +1,4 @@
-using FluentAssertions;
+using Shouldly;
 using Xunit;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace Cake.AsciiDoctorJ.Tests
             setFlag(sut);
 
             var actual = fixture.EvaluateArgs(sut);
-            actual.Should().Contain(expectedParam);
+            actual.ShouldContain(expectedParam);
         }
 
         private class TestData : IEnumerable<object[]>

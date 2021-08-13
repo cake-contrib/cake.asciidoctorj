@@ -2,7 +2,7 @@ using System;
 
 using Cake.AsciiDoctorJ.Tests.Fixtures;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -17,7 +17,7 @@ namespace Cake.AsciiDoctorJ.Tests
             fixture.GivenSettingsIsNull();
 
             Action action = () => fixture.Run();
-            action.Should().Throw<ArgumentNullException>().WithMessage("*settings*");
+            action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("settings");
         }
 
         [Fact]
@@ -27,7 +27,7 @@ namespace Cake.AsciiDoctorJ.Tests
 
             var actual = fixture.Run();
 
-            actual.Args.Should().Be("");
+            actual.Args.ShouldBe("");
         }
 
         [Fact]
@@ -38,7 +38,7 @@ namespace Cake.AsciiDoctorJ.Tests
 
             var actual = fixture.RunFluent(x => { });
 
-            actual.Args.Should().Be("");
+            actual.Args.ShouldBe("");
         }
 
         [Fact]
@@ -48,7 +48,7 @@ namespace Cake.AsciiDoctorJ.Tests
             fixture.GivenContextIsNull();
 
             Action action = () => fixture.Run();
-            action.Should().Throw<ArgumentNullException>().WithMessage("*context*");
+            action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("context");
         }
 
         [Fact]
@@ -58,7 +58,7 @@ namespace Cake.AsciiDoctorJ.Tests
             fixture.GivenContextIsNull();
 
             Action action = () => fixture.RunFluent(x => { });
-            action.Should().Throw<ArgumentNullException>().WithMessage("*context*");
+            action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("context");
         }
     }
 }
