@@ -20,4 +20,4 @@ build_script:
   - ps: .\build.ps1 --target=CI --verbosity=Diagnostic
 
 cache:
-  - "tools -> recipe.cake"
+  - ".cake -> recipe.cake"

@@ -17,8 +17,8 @@
 # GhostDoc plugin settings file
 *.GhostDoc.xml
 
-# Ignore cake tools directory, except packages.config
-tools/*
+# Ignore cake .cake directory, except packages.config
+.cake/*
 
 # Ignore build artifacts
 BuildArtifacts/

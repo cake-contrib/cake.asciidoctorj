@@ -29,8 +29,8 @@ jobs:
       - name: Cache Tools
         uses: actions/cache@v2
         with:
-          path: tools
-          key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
+          path: .cake
+          key: ${{ runner.os }}-cake-${{ hashFiles('recipe.cake') }}
       - name: Build project
         uses: cake-build/cake-action@v1
         with:
