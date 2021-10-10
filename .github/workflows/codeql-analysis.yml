@@ -41,8 +41,8 @@ jobs:
     - name: Cache Tools
       uses: actions/cache@v2
       with:
-        path: tools
-        key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
+        path: .cake
+        key: ${{ runner.os }}-cake-${{ hashFiles('recipe.cake') }}
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
