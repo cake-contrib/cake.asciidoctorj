@@ -53,34 +53,6 @@ var searchModule = function() {
     a(
         {
             id:1,
-            title:"SafeMode",
-            content:"SafeMode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
-            title:"SafeMode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"AsciiDoctorJAliases",
-            content:"AsciiDoctorJAliases",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
-            title:"AsciiDoctorJAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
             title:"AsciiDoctorJRunnerSettingsExtensions",
             content:"AsciiDoctorJRunnerSettingsExtensions",
             description:'',
@@ -94,21 +66,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:4,
-            title:"BuiltinBackend",
-            content:"BuiltinBackend",
+            id:2,
+            title:"DocType",
+            content:"DocType",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
-            title:"BuiltinBackend",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
             description:""
         }
     );
     a(
         {
-            id:5,
+            id:3,
             title:"ERuby",
             content:"ERuby",
             description:'',
@@ -122,15 +94,43 @@ var searchModule = function() {
     );
     a(
         {
-            id:6,
-            title:"DocType",
-            content:"DocType",
+            id:4,
+            title:"AsciiDoctorJAliases",
+            content:"AsciiDoctorJAliases",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
+            title:"AsciiDoctorJAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"SafeMode",
+            content:"SafeMode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
+            title:"SafeMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"BuiltinBackend",
+            content:"BuiltinBackend",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
+            title:"BuiltinBackend",
             description:""
         }
     );
