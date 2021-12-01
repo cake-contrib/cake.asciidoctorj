@@ -12,7 +12,9 @@ BuildParameters.SetParameters(
     repositoryName: "cake.asciidoctorj",
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
-    shouldUseDeterministicBuilds: true);
+    shouldUseDeterministicBuilds: true,
+    preferredBuildProviderType: BuildProviderType.GitHubActions,
+    preferredBuildAgentOperatingSystem: PlatformFamily.Linux);
 
 BuildParameters.PrintParameters(Context);
 
