@@ -1,8 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp2.1;netcoreapp3.1</TargetFrameworks>
-        <TargetFrameworks Condition="'$(OS)'!='Unix'">$(TargetFrameworks);net461</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
         <CodeAnalysisRuleSet>..\Cake.AsciiDoctorJ.ruleset</CodeAnalysisRuleSet>
 
         <IsPackable>false</IsPackable>
@@ -19,20 +18,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Cake.Testing" Version="1.1.0" />
-        <PackageReference Include="coverlet.msbuild" Version="3.0.3">
+        <PackageReference Include="Cake.Testing" Version="2.0.0" />
+        <PackageReference Include="coverlet.msbuild" Version="3.1.0">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="FluentAssertions" Version="5.10.3" />
-        <PackageReference Include="FluentAssertions.Analyzers" Version="0.11.4" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Moq" Version="4.16.1" />
-        <PackageReference Include="Text.Analyzers" Version="2.6.4">
+        <PackageReference Include="Shouldly" Version="4.0.3" />
+        <PackageReference Include="Text.Analyzers" Version="3.3.3">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>

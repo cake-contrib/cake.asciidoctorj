@@ -3,7 +3,7 @@
 [![standard-readme compliant][]][standard-readme]
 [![All Contributors][all-contributors-badge]](#contributors)
 [![Contributor Covenant][contrib-covenantimg]][contrib-covenant]
-[![Appveyor build][appveyorimage]][appveyor]
+[![Build][buildimage]][build]
 [![Codecov Report][codecovimage]][codecov]
 [![NuGet package][nugetimage]][nuget]
 
@@ -67,13 +67,15 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://www.nils-andresen.de/"><img src="https://avatars3.githubusercontent.com/u/349188?v=4" width="100px;" alt=""/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=nils-a" title="Code">💻</a> <a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=nils-a" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://twitter.com/hereispascal"><img src="https://avatars1.githubusercontent.com/u/2190718?v=4" width="100px;" alt=""/><br /><sub><b>Pascal Berger</b></sub></a><br /><a href="https://github.com/cake-contrib/cake.asciidoctorj/issues?q=author%3Apascalberger" title="Bug reports">🐛</a> <a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=pascalberger" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.nils-andresen.de/"><img src="https://avatars3.githubusercontent.com/u/349188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=nils-a" title="Code">💻</a> <a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=nils-a" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://twitter.com/hereispascal"><img src="https://avatars1.githubusercontent.com/u/2190718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pascal Berger</b></sub></a><br /><a href="https://github.com/cake-contrib/cake.asciidoctorj/issues?q=author%3Apascalberger" title="Bug reports">🐛</a> <a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=pascalberger" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/DiDoHH"><img src="https://avatars.githubusercontent.com/u/45682415?v=4?s=100" width="100px;" alt=""/><br /><sub><b>DiDoHH</b></sub></a><br /><a href="https://github.com/cake-contrib/cake.asciidoctorj/commits?author=DiDoHH" title="Documentation">📖</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
@@ -82,8 +84,8 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 
 [all-contributors]: https://github.com/all-contributors/all-contributors
 [all-contributors-badge]: https://img.shields.io/github/all-contributors/cake-contrib/cake.AsciiDoctorJ/develop?&style=flat-square
-[appveyor]: https://ci.appveyor.com/project/cakecontrib/cake-asciidoctorj
-[appveyorimage]: https://img.shields.io/appveyor/ci/cakecontrib/cake-asciidoctorj.svg?logo=appveyor&style=flat-square
+[build]: https://github.com/cake-contrib/cake.asciidoctorj/actions/workflows/build.yml
+[buildimage]: https://github.com/cake-contrib/cake.asciidoctorj/actions/workflows/build.yml/badge.svg
 [codecov]: https://codecov.io/gh/cake-contrib/Cake.AsciiDoctorJ
 [codecovimage]: https://img.shields.io/codecov/c/github/cake-contrib/Cake.AsciiDoctorJ.svg?logo=codecov&style=flat-square
 [contrib-covenant]: https://www.contributor-covenant.org/version/2/0/code_of_conduct/
