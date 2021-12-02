@@ -39,34 +39,20 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            content:"AsciiDoctorJRunnerSettingsExtensions",
+            title:"DocType",
+            content:"DocType",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
-            title:"AsciiDoctorJRunnerSettingsExtensions",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
             description:""
         }
     );
     a(
         {
             id:1,
-            title:"BuiltinBackend",
-            content:"BuiltinBackend",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
-            title:"BuiltinBackend",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
             title:"AsciiDoctorJAliases",
             content:"AsciiDoctorJAliases",
             description:'',
@@ -80,21 +66,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:3,
-            title:"ERuby",
-            content:"ERuby",
+            id:2,
+            title:"BuiltinBackend",
+            content:"BuiltinBackend",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
-            title:"ERuby",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
+            title:"BuiltinBackend",
             description:""
         }
     );
     a(
         {
-            id:4,
+            id:3,
             title:"SafeMode",
             content:"SafeMode",
             description:'',
@@ -103,6 +89,20 @@ var searchModule = function() {
         {
             url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
             title:"SafeMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            content:"AsciiDoctorJRunnerSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
+            title:"AsciiDoctorJRunnerSettingsExtensions",
             description:""
         }
     );
@@ -123,14 +123,14 @@ var searchModule = function() {
     a(
         {
             id:6,
-            title:"DocType",
-            content:"DocType",
+            title:"ERuby",
+            content:"ERuby",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
+            title:"ERuby",
             description:""
         }
     );
