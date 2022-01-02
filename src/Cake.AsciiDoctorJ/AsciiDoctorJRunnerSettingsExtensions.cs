@@ -306,7 +306,7 @@ namespace Cake.AsciiDoctorJ
         public static AsciiDoctorJRunnerSettings WithBuiltinBackend(this AsciiDoctorJRunnerSettings @this, BuiltinBackend backend)
         {
             // ReSharper disable PossibleNullReferenceException
-            @this.Backend = Enum.GetName(typeof(BuiltinBackend), backend).ToLowerInvariant();
+            @this.Backend = Enum.GetName(typeof(BuiltinBackend), backend) !.ToLowerInvariant();
 
             // ReSharper enable PossibleNullReferenceException
             return @this;

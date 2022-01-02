@@ -14,14 +14,14 @@ namespace Cake.AsciiDoctorJ.Tests.Fixtures
 
         public void GivenSettingsIsNull()
         {
-            Settings = null;
+            Settings = null!;
         }
 
         public ToolFixtureResult RunFluent(Action<AsciiDoctorJRunnerSettings> configure)
         {
             var tool = new AsciiDoctorJRunner(FileSystem, Environment, ProcessRunner, Tools);
             tool.Run(configure, Settings);
-            return ProcessRunner.Results.LastOrDefault();
+            return ProcessRunner.Results.Last();
         }
 
         protected override void RunTool()

@@ -42,7 +42,7 @@ namespace Cake.AsciiDoctorJ
         [CakeAliasCategory("AsciiDoctorJ")]
         public static void AsciiDoctorJ(
             this ICakeContext context,
-            Action<AsciiDoctorJRunnerSettings> configure = null)
+            Action<AsciiDoctorJRunnerSettings>? configure = null)
         {
             if (context == null)
             {

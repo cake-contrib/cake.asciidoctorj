@@ -35,12 +35,9 @@ namespace Cake.AsciiDoctorJ
         /// </summary>
         /// <param name="configure">The configuration action.</param>
         /// <param name="settings">The settings.</param>
-        internal void Run(Action<AsciiDoctorJRunnerSettings> configure = null, AsciiDoctorJRunnerSettings settings = null)
+        internal void Run(Action<AsciiDoctorJRunnerSettings>? configure = null, AsciiDoctorJRunnerSettings? settings = null)
         {
-            if (settings == null)
-            {
-                settings = new AsciiDoctorJRunnerSettings();
-            }
+            settings ??= new AsciiDoctorJRunnerSettings();
 
             configure?.Invoke(settings);
             Run(settings);

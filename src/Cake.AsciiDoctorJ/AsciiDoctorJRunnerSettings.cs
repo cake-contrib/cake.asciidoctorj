@@ -52,14 +52,14 @@ namespace Cake.AsciiDoctorJ
         /// template engine to use for the custom render templates (loads gem on demand).
         /// <para>corresponds to: -E, --template-engine.</para>
         /// </summary>
-        public string TemplateEngine { get; set; }
+        public string? TemplateEngine { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating the
         /// directory containing custom render templates the override the built-in set.
         /// <para>corresponds to:  -T, --template-dir.</para>
         /// </summary>
-        public DirectoryPath TemplateDir { get; set; }
+        public DirectoryPath? TemplateDir { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to
@@ -97,7 +97,7 @@ namespace Cake.AsciiDoctorJ
         /// output file(default: based on input file path); use - to output to STDOUT.
         /// <para>corresponds to:  -o, --out-file.</para>
         /// </summary>
-        public FilePath Output { get; set; }
+        public FilePath? Output { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to
@@ -140,7 +140,7 @@ namespace Cake.AsciiDoctorJ
         /// <para>Default: Directory of source file.</para>
         /// <para>corresponds to:    -D, --destination-dir.</para>
         /// </summary>
-        public DirectoryPath DestinationDir { get; set; }
+        public DirectoryPath? DestinationDir { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to
@@ -162,7 +162,7 @@ namespace Cake.AsciiDoctorJ
         /// <para>Default: directory of source file.</para>
         /// <para>corresponds to:     -B, --base-dir.</para>
         /// </summary>
-        public DirectoryPath BaseDir { get; set; }
+        public DirectoryPath? BaseDir { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to
@@ -170,7 +170,7 @@ namespace Cake.AsciiDoctorJ
         /// <para>Default: html5.</para>
         /// <para>corresponds to:     -b, --backend.</para>
         /// </summary>
-        public string Backend { get; set; }
+        public string? Backend { get; set; }
 
         /// <summary>
         /// Gets the list of attributes to set on the document.
@@ -219,7 +219,7 @@ namespace Cake.AsciiDoctorJ
             if (SafeMode.HasValue)
             {
                 // ReSharper disable PossibleNullReferenceException
-                args.Append("--safe-mode " + Enum.GetName(typeof(SafeMode), SafeMode.Value).ToLowerInvariant());
+                args.Append("--safe-mode " + Enum.GetName(typeof(SafeMode), SafeMode.Value) !.ToLowerInvariant());
 
                 // ReSharper enable PossibleNullReferenceException
             }
@@ -252,14 +252,14 @@ namespace Cake.AsciiDoctorJ
             if (ERuby.HasValue)
             {
                 // ReSharper disable PossibleNullReferenceException
-                args.Append("--eruby " + Enum.GetName(typeof(ERuby), ERuby.Value).ToLowerInvariant());
+                args.Append("--eruby " + Enum.GetName(typeof(ERuby), ERuby.Value) !.ToLowerInvariant());
 
                 // ReSharper enable PossibleNullReferenceException
             }
 
             if (DocType.HasValue)
             {
-                args.Append("--doctype " + Enum.GetName(typeof(DocType), DocType.Value).ToLowerInvariant());
+                args.Append("--doctype " + Enum.GetName(typeof(DocType), DocType.Value) !.ToLowerInvariant());
             }
 
             if (DestinationDir != null)
@@ -290,9 +290,9 @@ namespace Cake.AsciiDoctorJ
                 args.Append("--backend " + Backend);
             }
 
-            foreach (var kvp in Attributes)
+            foreach ((string key, string value) in Attributes)
             {
-                args.Append($"--attribute {kvp.Key}={kvp.Value}");
+                args.Append($"--attribute {key}={value}");
             }
 
             // input is last!

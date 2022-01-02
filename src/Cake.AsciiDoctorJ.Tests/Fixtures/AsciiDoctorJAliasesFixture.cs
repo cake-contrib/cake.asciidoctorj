@@ -33,13 +33,13 @@ namespace Cake.AsciiDoctorJ.Tests.Fixtures
 
         internal void GivenContextIsNull()
         {
-            context = null;
+            context = null!;
         }
 
         internal new ToolFixtureResult RunFluent(Action<AsciiDoctorJRunnerSettings> configure)
         {
             context.AsciiDoctorJ(configure);
-            return ProcessRunner.Results.LastOrDefault();
+            return ProcessRunner.Results.Last();
         }
 
         protected override void RunTool()

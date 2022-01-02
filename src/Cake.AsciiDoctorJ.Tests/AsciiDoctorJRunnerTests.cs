@@ -63,10 +63,10 @@ namespace Cake.AsciiDoctorJ.Tests
         {
             var fixture = new AsciiDoctorJRunnerFixture
             {
-                Settings = null
+                Settings = null!
             };
 
-            var actual = fixture.RunFluent(null);
+            var actual = fixture.RunFluent(null!);
 
             actual.Args.ShouldBe("");
         }
