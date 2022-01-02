@@ -8,43 +8,42 @@ using Cake.Testing.Fixtures;
 
 using Moq;
 
-namespace Cake.AsciiDoctorJ.Tests.Fixtures
+namespace Cake.AsciiDoctorJ.Tests.Fixtures;
+
+internal class AsciiDoctorJAliasesFixture : AsciiDoctorJRunnerFixture
 {
-    internal class AsciiDoctorJAliasesFixture : AsciiDoctorJRunnerFixture
+    private ICakeContext context;
+
+    public AsciiDoctorJAliasesFixture()
     {
-        private ICakeContext context;
+        var argumentsMoq = new Mock<ICakeArguments>();
+        var registryMoq = new Mock<IRegistry>();
+        var dataService = new Mock<ICakeDataService>();
+        context = new CakeContext(
+            FileSystem,
+            Environment,
+            Globber,
+            new FakeLog(),
+            argumentsMoq.Object,
+            ProcessRunner,
+            registryMoq.Object,
+            Tools, dataService.Object,
+            Configuration);
+    }
 
-        public AsciiDoctorJAliasesFixture()
-        {
-            var argumentsMoq = new Mock<ICakeArguments>();
-            var registryMoq = new Mock<IRegistry>();
-            var dataService = new Mock<ICakeDataService>();
-            context = new CakeContext(
-                FileSystem,
-                Environment,
-                Globber,
-                new FakeLog(),
-                argumentsMoq.Object,
-                ProcessRunner,
-                registryMoq.Object,
-                Tools, dataService.Object,
-                Configuration);
-        }
+    internal void GivenContextIsNull()
+    {
+        context = null!;
+    }
 
-        internal void GivenContextIsNull()
-        {
-            context = null!;
-        }
+    internal new ToolFixtureResult RunFluent(Action<AsciiDoctorJRunnerSettings> configure)
+    {
+        context.AsciiDoctorJ(configure);
+        return ProcessRunner.Results.Last();
+    }
 
-        internal new ToolFixtureResult RunFluent(Action<AsciiDoctorJRunnerSettings> configure)
-        {
-            context.AsciiDoctorJ(configure);
-            return ProcessRunner.Results.Last();
-        }
-
-        protected override void RunTool()
-        {
-            context.AsciiDoctorJ(Settings);
-        }
+    protected override void RunTool()
+    {
+        context.AsciiDoctorJ(Settings);
     }
 }

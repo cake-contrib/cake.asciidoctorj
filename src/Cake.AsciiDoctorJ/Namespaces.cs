@@ -8,15 +8,14 @@ using System.Runtime.CompilerServices;
 
 // ReSharper disable UnusedMember.Global
 // ReSharper disable UnusedType.Global
-namespace Cake.AsciiDoctorJ
+namespace Cake.AsciiDoctorJ;
+
+/// <summary>
+/// This namespace contain types related to running AsciiDoctorJ.
+/// </summary>
+[CompilerGenerated]
+internal class NamespaceDoc
 {
-    /// <summary>
-    /// This namespace contain types related to running AsciiDoctorJ.
-    /// </summary>
-    [CompilerGenerated]
-    internal class NamespaceDoc
-    {
-    }
 }
 
 #pragma warning restore SA1403 // File may only contain a single namespace
