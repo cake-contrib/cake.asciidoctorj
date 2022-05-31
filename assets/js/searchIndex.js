@@ -39,20 +39,34 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"BuiltinBackend",
-            content:"BuiltinBackend",
+            title:"DocType",
+            content:"DocType",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
-            title:"BuiltinBackend",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
             description:""
         }
     );
     a(
         {
             id:1,
+            title:"AsciiDoctorJRunnerSettings",
+            content:"AsciiDoctorJRunnerSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
+            title:"AsciiDoctorJRunnerSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:2,
             title:"SafeMode",
             content:"SafeMode",
             description:'',
@@ -66,7 +80,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:2,
+            id:3,
+            title:"BuiltinBackend",
+            content:"BuiltinBackend",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
+            title:"BuiltinBackend",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
             title:"ERuby",
             content:"ERuby",
             description:'',
@@ -75,34 +103,6 @@ var searchModule = function() {
         {
             url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
             title:"ERuby",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
-            title:"AsciiDoctorJAliases",
-            content:"AsciiDoctorJAliases",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
-            title:"AsciiDoctorJAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
-            title:"AsciiDoctorJRunnerSettings",
-            content:"AsciiDoctorJRunnerSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
-            title:"AsciiDoctorJRunnerSettings",
             description:""
         }
     );
@@ -123,14 +123,14 @@ var searchModule = function() {
     a(
         {
             id:6,
-            title:"DocType",
-            content:"DocType",
+            title:"AsciiDoctorJAliases",
+            content:"AsciiDoctorJAliases",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
+            title:"AsciiDoctorJAliases",
             description:""
         }
     );
