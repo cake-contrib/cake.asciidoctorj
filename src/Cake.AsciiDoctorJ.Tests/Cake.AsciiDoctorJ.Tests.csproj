@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+        <TargetFrameworks Condition="false">netcoreapp3.1</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <CodeAnalysisRuleSet>..\Cake.AsciiDoctorJ.ruleset</CodeAnalysisRuleSet>
 
         <IsPackable>false</IsPackable>
@@ -9,34 +10,26 @@
         <RootNamespace>Cake.AsciiDoctorJ.Tests</RootNamespace>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.0|AnyCPU'">
-        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.0|AnyCPU'">
-        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
-    </PropertyGroup>
-
     <ItemGroup>
-        <PackageReference Include="Cake.Testing" Version="2.0.0" />
-        <PackageReference Include="coverlet.msbuild" Version="3.1.0">
+        <PackageReference Include="Cake.Testing" Version="3.0.0" />
+        <PackageReference Include="coverlet.msbuild" Version="3.2.0">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Moq" Version="4.16.1" />
-        <PackageReference Include="Shouldly" Version="4.0.3" />
+        <PackageReference Include="Moq" Version="4.18.2" />
+        <PackageReference Include="Shouldly" Version="4.1.0" />
         <PackageReference Include="Text.Analyzers" Version="3.3.3">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="xunit" Version="2.4.1" />
-        <PackageReference Include="xunit.analyzers" Version="0.10.0" />
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+        <PackageReference Include="xunit" Version="2.4.2" />
+        <PackageReference Include="xunit.analyzers" Version="1.0.0" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>

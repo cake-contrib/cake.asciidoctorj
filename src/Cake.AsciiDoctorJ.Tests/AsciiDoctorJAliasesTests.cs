@@ -6,59 +6,58 @@ using Shouldly;
 
 using Xunit;
 
-namespace Cake.AsciiDoctorJ.Tests
+namespace Cake.AsciiDoctorJ.Tests;
+
+public class AsciiDoctorJAliasesTests
 {
-    public class AsciiDoctorJAliasesTests
+    [Fact]
+    public void Should_throw_if_settings_are_null()
     {
-        [Fact]
-        public void Should_throw_if_settings_are_null()
-        {
-            var fixture = new AsciiDoctorJAliasesFixture();
-            fixture.GivenSettingsIsNull();
+        var fixture = new AsciiDoctorJAliasesFixture();
+        fixture.GivenSettingsIsNull();
 
-            Action action = () => fixture.Run();
-            action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("settings");
-        }
+        Action action = () => fixture.Run();
+        action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("settings");
+    }
 
-        [Fact]
-        public void Should_not_throw_if_settings_are_set()
-        {
-            var fixture = new AsciiDoctorJAliasesFixture();
+    [Fact]
+    public void Should_not_throw_if_settings_are_set()
+    {
+        var fixture = new AsciiDoctorJAliasesFixture();
 
-            var actual = fixture.Run();
+        var actual = fixture.Run();
 
-            actual.Args.ShouldBe("");
-        }
+        actual.Args.ShouldBe("");
+    }
 
-        [Fact]
-        public void Should_not_throw_if_settings_are_null_but_called_fluently()
-        {
-            var fixture = new AsciiDoctorJAliasesFixture();
-            fixture.GivenSettingsIsNull();
+    [Fact]
+    public void Should_not_throw_if_settings_are_null_but_called_fluently()
+    {
+        var fixture = new AsciiDoctorJAliasesFixture();
+        fixture.GivenSettingsIsNull();
 
-            var actual = fixture.RunFluent(x => { });
+        var actual = fixture.RunFluent(x => { });
 
-            actual.Args.ShouldBe("");
-        }
+        actual.Args.ShouldBe("");
+    }
 
-        [Fact]
-        public void Should_throw_if_context_is_null()
-        {
-            var fixture = new AsciiDoctorJAliasesFixture();
-            fixture.GivenContextIsNull();
+    [Fact]
+    public void Should_throw_if_context_is_null()
+    {
+        var fixture = new AsciiDoctorJAliasesFixture();
+        fixture.GivenContextIsNull();
 
-            Action action = () => fixture.Run();
-            action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("context");
-        }
+        Action action = () => fixture.Run();
+        action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("context");
+    }
 
-        [Fact]
-        public void Should_throw_if_context_is_null_called_fluently()
-        {
-            var fixture = new AsciiDoctorJAliasesFixture();
-            fixture.GivenContextIsNull();
+    [Fact]
+    public void Should_throw_if_context_is_null_called_fluently()
+    {
+        var fixture = new AsciiDoctorJAliasesFixture();
+        fixture.GivenContextIsNull();
 
-            Action action = () => fixture.RunFluent(x => { });
-            action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("context");
-        }
+        Action action = () => fixture.RunFluent(x => { });
+        action.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("context");
     }
 }

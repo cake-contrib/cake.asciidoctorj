@@ -1,7 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=2.2.1
-
-// Workaround for https://github.com/cake-contrib/Cake.Recipe/issues/854
-#tool nuget:?package=NuGet.CommandLine&version=5.8.1
+#load nuget:?package=Cake.Recipe&version=3.0.1
 
 Environment.SetVariableNames();
 
@@ -16,6 +13,7 @@ BuildParameters.SetParameters(
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
     shouldUseDeterministicBuilds: true,
+    shouldRunInspectCode: false, // we're shipping a custom version of it below
     preferredBuildProviderType: BuildProviderType.GitHubActions,
     preferredBuildAgentOperatingSystem: PlatformFamily.Linux);
 
