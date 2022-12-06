@@ -39,20 +39,34 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"BuiltinBackend",
-            content:"BuiltinBackend",
+            title:"ERuby",
+            content:"ERuby",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
-            title:"BuiltinBackend",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
+            title:"ERuby",
             description:""
         }
     );
     a(
         {
             id:1,
+            title:"DocType",
+            content:"DocType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:2,
             title:"AsciiDoctorJRunnerSettingsExtensions",
             content:"AsciiDoctorJRunnerSettingsExtensions",
             description:'',
@@ -61,20 +75,6 @@ var searchModule = function() {
         {
             url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
             title:"AsciiDoctorJRunnerSettingsExtensions",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"AsciiDoctorJRunnerSettings",
-            content:"AsciiDoctorJRunnerSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
-            title:"AsciiDoctorJRunnerSettings",
             description:""
         }
     );
@@ -95,28 +95,28 @@ var searchModule = function() {
     a(
         {
             id:4,
-            title:"DocType",
-            content:"DocType",
+            title:"BuiltinBackend",
+            content:"BuiltinBackend",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
+            title:"BuiltinBackend",
             description:""
         }
     );
     a(
         {
             id:5,
-            title:"ERuby",
-            content:"ERuby",
+            title:"AsciiDoctorJRunnerSettings",
+            content:"AsciiDoctorJRunnerSettings",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
-            title:"ERuby",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
+            title:"AsciiDoctorJRunnerSettings",
             description:""
         }
     );
