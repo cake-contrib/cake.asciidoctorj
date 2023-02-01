@@ -21,6 +21,7 @@ public class AsciiDoctorJRunnerSettings : ToolSettings
         LoadPath = new List<DirectoryPath>();
         ClassPath = new List<DirectoryPath>();
         Attributes = new Dictionary<string, string>();
+        Require = new List<string>();
     }
 
     /// <summary>
@@ -82,7 +83,7 @@ public class AsciiDoctorJRunnerSettings : ToolSettings
     /// require the specified library before executing the processor.
     /// <para>corresponds to: -r, --require.</para>
     /// </summary>
-    public bool Require { get; set; }
+    public IList<string> Require { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether to
@@ -224,9 +225,9 @@ public class AsciiDoctorJRunnerSettings : ToolSettings
             // ReSharper enable PossibleNullReferenceException
         }
 
-        if (Require)
+        foreach (var req in Require)
         {
-            args.Append("--require");
+            args.Append("--require " + req);
         }
 
         if (Quiet)
