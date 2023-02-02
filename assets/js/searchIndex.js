@@ -39,48 +39,20 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            content:"AsciiDoctorJRunnerSettingsExtensions",
+            title:"AsciiDoctorJAliases",
+            content:"AsciiDoctorJAliases",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
-            title:"AsciiDoctorJRunnerSettingsExtensions",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
+            title:"AsciiDoctorJAliases",
             description:""
         }
     );
     a(
         {
             id:1,
-            title:"AsciiDoctorJRunnerSettings",
-            content:"AsciiDoctorJRunnerSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
-            title:"AsciiDoctorJRunnerSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"DocType",
-            content:"DocType",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
             title:"BuiltinBackend",
             content:"BuiltinBackend",
             description:'',
@@ -94,15 +66,43 @@ var searchModule = function() {
     );
     a(
         {
-            id:4,
-            title:"AsciiDoctorJAliases",
-            content:"AsciiDoctorJAliases",
+            id:2,
+            title:"SafeMode",
+            content:"SafeMode",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
-            title:"AsciiDoctorJAliases",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
+            title:"SafeMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            content:"AsciiDoctorJRunnerSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
+            title:"AsciiDoctorJRunnerSettings",
+            content:"AsciiDoctorJRunnerSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
+            title:"AsciiDoctorJRunnerSettings",
             description:""
         }
     );
@@ -123,14 +123,14 @@ var searchModule = function() {
     a(
         {
             id:6,
-            title:"SafeMode",
-            content:"SafeMode",
+            title:"DocType",
+            content:"DocType",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
-            title:"SafeMode",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
             description:""
         }
     );
