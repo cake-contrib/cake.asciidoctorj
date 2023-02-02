@@ -33,6 +33,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "mcpride",
+      "name": "Marco Stolze",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1053528?v=4",
+      "profile": "https://mcpride.github.io",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
