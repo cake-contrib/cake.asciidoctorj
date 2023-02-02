@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Cake.Core.IO;
 
@@ -124,9 +125,9 @@ public static class AsciiDoctorJRunnerSettingsExtensions
     /// </summary>
     /// <param name="this">The <see cref="AsciiDoctorJRunnerSettings"/> that extended by this.</param>
     /// <returns>The reference to the <see cref="AsciiDoctorJRunnerSettings"/>.</returns>
-    public static AsciiDoctorJRunnerSettings WithRequire(this AsciiDoctorJRunnerSettings @this)
+    public static AsciiDoctorJRunnerSettings WithRequire(this AsciiDoctorJRunnerSettings @this, params string[] require)
     {
-        @this.Require = true;
+        require.ToList().ForEach(@this.Require.Add);
         return @this;
     }
 
