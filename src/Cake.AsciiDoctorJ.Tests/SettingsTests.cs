@@ -39,7 +39,6 @@ public class SettingsTests
             yield return (s => s.Verbose = true, "--verbose");
             yield return (s => s.TimingsMode = true, "--timings");
             yield return (s => s.SectionNumbers = true, "--section-numbers");
-            yield return (s => s.Require = true, "--require");
             yield return (s => s.Quiet = true, "--quiet");
             yield return (s => s.SuppressHeaderAndFooter = true, "--no-header-footer");
             yield return (s => s.Compact = true, "--compact");
@@ -70,6 +69,7 @@ public class SettingsTests
             yield return (s => s.Backend = "pdf", "--backend pdf");
             yield return (s => s.Attributes.Add("foo", "bar"), "--attribute foo=bar");
             yield return (s => s.InputFiles.Add(new FilePath("/foo.adoc")), "\"/foo.adoc\"");
+            yield return (s => s.Require.Add("asciidoctor-diagram"), "--require asciidoctor-diagram");
         }
 
         public IEnumerator<object[]> GetEnumerator()

@@ -25,7 +25,7 @@ public class SettingsExtensionsTests
         setFlag(sut);
 
         var actual = fixture.EvaluateArgs(sut);
-        actual.ShouldContain(expectedParam);
+        actual.ShouldBe(expectedParam);
     }
 
     [Theory]
@@ -71,7 +71,7 @@ public class SettingsExtensionsTests
             yield return (s => s.WithVerbose(), "--verbose");
             yield return (s => s.WithTimingsMode(), "--timings");
             yield return (s => s.WithSectionNumbers(), "--section-numbers");
-            yield return (s => s.WithRequire(), "--require");
+            yield return (s => s.WithRequire("asciidoctor-epub3"), "--require asciidoctor-epub3");
             yield return (s => s.WithQuiet(), "--quiet");
             yield return (s => s.WithSuppressHeaderAndFooter(), "--no-header-footer");
             yield return (s => s.WithCompact(), "--compact");
@@ -116,7 +116,7 @@ public class SettingsExtensionsTests
             yield return (s => s.WithAttribute("foo", "bar"), "--attribute foo=bar");
             yield return (s => s.WithAttributes(new Dictionary<string, string> { { "foo", "bar" }, { "bim", "bam" } }),
                 "--attribute foo=bar --attribute bim=bam");
-            yield return (s => s.WithInputFile(new FilePath("/foo.adoc")), "/foo.adoc");
+            yield return (s => s.WithInputFile(new FilePath("/foo.adoc")), "\"/foo.adoc\"");
             yield return (s => s.WithInputFiles(new[] { new FilePath("/foo.adoc"), new FilePath("/bar.adoc") }),
                 "\"/foo.adoc\" \"/bar.adoc\"");
         }
@@ -140,7 +140,6 @@ public class SettingsExtensionsTests
             yield return (s => s.WithVerbose(), s => s.Verbose, true);
             yield return (s => s.WithTimingsMode(), s => s.TimingsMode, true);
             yield return (s => s.WithSectionNumbers(), s => s.SectionNumbers, true);
-            yield return (s => s.WithRequire(), s => s.Require, true);
             yield return (s => s.WithQuiet(), s => s.Quiet, true);
             yield return (s => s.WithSuppressHeaderAndFooter(), s => s.SuppressHeaderAndFooter, true);
             yield return (s => s.WithCompact(), s => s.Compact, true);
@@ -168,6 +167,7 @@ public class SettingsExtensionsTests
             var barAdoc = new FilePath("bar.adoc");
             var fooBar = new KeyValuePair<string, string>("foo", "bar");
             var bimBam = new KeyValuePair<string, string>("bim", "bam");
+            var libs = new[]{"some-library", "another-library"};
             yield return (s => s.WithTemplateEngine("some-engine"), s => s.TemplateEngine, "some-engine");
             yield return (s => s.WithTemplateDir(fooDir), s => s.TemplateDir, fooDir);
             yield return (s => s.WithOutputFile(fooPdf), s => s.Output, fooPdf);
@@ -184,6 +184,8 @@ public class SettingsExtensionsTests
             yield return (s => s.WithInputFile(fooAdoc), s => s.InputFiles, new[] { fooAdoc });
             yield return (s => s.WithInputFiles(new[] { fooAdoc, barAdoc }), s => s.InputFiles,
                 new[] { fooAdoc, barAdoc });
+            yield return (s => s.WithRequire(libs), s => s.Require, libs);
+
         }
 
         public IEnumerator<object[]> GetEnumerator()
