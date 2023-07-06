@@ -53,14 +53,14 @@ var searchModule = function() {
     a(
         {
             id:1,
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            content:"AsciiDoctorJRunnerSettingsExtensions",
+            title:"ERuby",
+            content:"ERuby",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
-            title:"AsciiDoctorJRunnerSettingsExtensions",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
+            title:"ERuby",
             description:""
         }
     );
@@ -81,20 +81,34 @@ var searchModule = function() {
     a(
         {
             id:3,
-            title:"ERuby",
-            content:"ERuby",
+            title:"SafeMode",
+            content:"SafeMode",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
-            title:"ERuby",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
+            title:"SafeMode",
             description:""
         }
     );
     a(
         {
             id:4,
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            content:"AsciiDoctorJRunnerSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
             title:"AsciiDoctorJRunnerSettings",
             content:"AsciiDoctorJRunnerSettings",
             description:'',
@@ -108,7 +122,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:5,
+            id:6,
             title:"AsciiDoctorJAliases",
             content:"AsciiDoctorJAliases",
             description:'',
@@ -117,20 +131,6 @@ var searchModule = function() {
         {
             url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
             title:"AsciiDoctorJAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:6,
-            title:"SafeMode",
-            content:"SafeMode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
-            title:"SafeMode",
             description:""
         }
     );
