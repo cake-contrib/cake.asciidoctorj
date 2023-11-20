@@ -1,8 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <!--
+        Fool Cake.Incubator into thinking we're building against netcoreapp3.1.
+        This is done to make Cake.Recipe avoid using OpenCover.
+        https://github.com/cake-contrib/Cake.Recipe/issues/570 will resolve this workaround.
+        -->
         <TargetFrameworks Condition="false">netcoreapp3.1</TargetFrameworks>
-        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
         <CodeAnalysisRuleSet>..\Cake.AsciiDoctorJ.ruleset</CodeAnalysisRuleSet>
 
         <IsPackable>false</IsPackable>
@@ -11,7 +16,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Cake.Testing" Version="3.2.0" />
+        <PackageReference Include="Cake.Testing" Version="4.0.0" />
         <PackageReference Include="coverlet.msbuild" Version="6.0.0">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
