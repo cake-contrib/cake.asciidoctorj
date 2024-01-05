@@ -67,14 +67,14 @@ var searchModule = function() {
     a(
         {
             id:2,
-            title:"AsciiDoctorJAliases",
-            content:"AsciiDoctorJAliases",
+            title:"SafeMode",
+            content:"SafeMode",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
-            title:"AsciiDoctorJAliases",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
+            title:"SafeMode",
             description:""
         }
     );
@@ -95,6 +95,20 @@ var searchModule = function() {
     a(
         {
             id:4,
+            title:"AsciiDoctorJAliases",
+            content:"AsciiDoctorJAliases",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
+            title:"AsciiDoctorJAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
             title:"BuiltinBackend",
             content:"BuiltinBackend",
             description:'',
@@ -108,7 +122,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:5,
+            id:6,
             title:"DocType",
             content:"DocType",
             description:'',
@@ -117,20 +131,6 @@ var searchModule = function() {
         {
             url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
             title:"DocType",
-            description:""
-        }
-    );
-    a(
-        {
-            id:6,
-            title:"SafeMode",
-            content:"SafeMode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
-            title:"SafeMode",
             description:""
         }
     );
