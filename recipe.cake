@@ -13,6 +13,7 @@ BuildParameters.SetParameters(
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
     shouldUseDeterministicBuilds: true,
+    shouldRunCodecov: false,
     shouldRunInspectCode: false, // we're shipping a custom version of it below
     preferredBuildProviderType: BuildProviderType.GitHubActions,
     preferredBuildAgentOperatingSystem: PlatformFamily.Linux);
