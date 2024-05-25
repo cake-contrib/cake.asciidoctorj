@@ -39,6 +39,34 @@ var searchModule = function() {
     a(
         {
             id:0,
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            content:"AsciiDoctorJRunnerSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
+            title:"AsciiDoctorJRunnerSettingsExtensions",
+            description:""
+        }
+    );
+    a(
+        {
+            id:1,
+            title:"DocType",
+            content:"DocType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:2,
             title:"ERuby",
             content:"ERuby",
             description:'',
@@ -47,34 +75,6 @@ var searchModule = function() {
         {
             url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
             title:"ERuby",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
-            title:"SafeMode",
-            content:"SafeMode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
-            title:"SafeMode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"AsciiDoctorJRunnerSettings",
-            content:"AsciiDoctorJRunnerSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
-            title:"AsciiDoctorJRunnerSettings",
             description:""
         }
     );
@@ -95,20 +95,6 @@ var searchModule = function() {
     a(
         {
             id:4,
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            content:"AsciiDoctorJRunnerSettingsExtensions",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettingsExtensions',
-            title:"AsciiDoctorJRunnerSettingsExtensions",
-            description:""
-        }
-    );
-    a(
-        {
-            id:5,
             title:"AsciiDoctorJAliases",
             content:"AsciiDoctorJAliases",
             description:'',
@@ -122,15 +108,29 @@ var searchModule = function() {
     );
     a(
         {
-            id:6,
-            title:"DocType",
-            content:"DocType",
+            id:5,
+            title:"SafeMode",
+            content:"SafeMode",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/SafeMode',
+            title:"SafeMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"AsciiDoctorJRunnerSettings",
+            content:"AsciiDoctorJRunnerSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
+            title:"AsciiDoctorJRunnerSettings",
             description:""
         }
     );
