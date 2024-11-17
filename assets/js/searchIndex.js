@@ -39,34 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"AsciiDoctorJRunnerSettings",
-            content:"AsciiDoctorJRunnerSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
-            title:"AsciiDoctorJRunnerSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
-            title:"AsciiDoctorJAliases",
-            content:"AsciiDoctorJAliases",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
-            title:"AsciiDoctorJAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
             title:"AsciiDoctorJRunnerSettingsExtensions",
             content:"AsciiDoctorJRunnerSettingsExtensions",
             description:'',
@@ -80,35 +52,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:3,
-            title:"DocType",
-            content:"DocType",
+            id:1,
+            title:"ERuby",
+            content:"ERuby",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
-            title:"DocType",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
+            title:"ERuby",
             description:""
         }
     );
     a(
         {
-            id:4,
-            title:"BuiltinBackend",
-            content:"BuiltinBackend",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
-            title:"BuiltinBackend",
-            description:""
-        }
-    );
-    a(
-        {
-            id:5,
+            id:2,
             title:"SafeMode",
             content:"SafeMode",
             description:'',
@@ -122,15 +80,57 @@ var searchModule = function() {
     );
     a(
         {
-            id:6,
-            title:"ERuby",
-            content:"ERuby",
+            id:3,
+            title:"BuiltinBackend",
+            content:"BuiltinBackend",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/ERuby',
-            title:"ERuby",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
+            title:"BuiltinBackend",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
+            title:"DocType",
+            content:"DocType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
+            title:"DocType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"AsciiDoctorJAliases",
+            content:"AsciiDoctorJAliases",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJAliases',
+            title:"AsciiDoctorJAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"AsciiDoctorJRunnerSettings",
+            content:"AsciiDoctorJRunnerSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
+            title:"AsciiDoctorJRunnerSettings",
             description:""
         }
     );
