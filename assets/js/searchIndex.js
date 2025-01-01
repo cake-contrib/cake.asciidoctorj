@@ -39,14 +39,14 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"BuiltinBackend",
-            content:"BuiltinBackend",
+            title:"AsciiDoctorJRunnerSettings",
+            content:"AsciiDoctorJRunnerSettings",
             description:'',
             tags:''
         },
         {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
-            title:"BuiltinBackend",
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
+            title:"AsciiDoctorJRunnerSettings",
             description:""
         }
     );
@@ -109,20 +109,6 @@ var searchModule = function() {
     a(
         {
             id:5,
-            title:"AsciiDoctorJRunnerSettings",
-            content:"AsciiDoctorJRunnerSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/AsciiDoctorJRunnerSettings',
-            title:"AsciiDoctorJRunnerSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:6,
             title:"DocType",
             content:"DocType",
             description:'',
@@ -131,6 +117,20 @@ var searchModule = function() {
         {
             url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/DocType',
             title:"DocType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"BuiltinBackend",
+            content:"BuiltinBackend",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/cake.asciidoctorj/api/Cake.AsciiDoctorJ/BuiltinBackend',
+            title:"BuiltinBackend",
             description:""
         }
     );
