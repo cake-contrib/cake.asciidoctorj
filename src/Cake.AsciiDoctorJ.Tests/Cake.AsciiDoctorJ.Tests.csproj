@@ -28,7 +28,7 @@
         </PackageReference>
         <PackageReference Include="Moq" Version="4.20.72" />
         <PackageReference Include="Shouldly" Version="4.3.0" />
-        <PackageReference Include="Text.Analyzers" Version="3.3.4">
+        <PackageReference Include="Text.Analyzers" Version="4.14.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
