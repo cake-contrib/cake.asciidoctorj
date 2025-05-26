@@ -13,6 +13,7 @@ BuildParameters.SetParameters(
     appVeyorAccountName: "cakecontrib",
     shouldRunDotNetCorePack: true,
     shouldUseDeterministicBuilds: true,
+    shouldRunCodecov: false,
     shouldRunInspectCode: false, // we're shipping a custom version of it below
     preferredBuildProviderType: BuildProviderType.GitHubActions,
     preferredBuildAgentOperatingSystem: PlatformFamily.Linux);
@@ -20,5 +21,7 @@ BuildParameters.SetParameters(
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context);
+ToolSettings.SetToolPreprocessorDirectives(
+    gitReleaseManagerGlobalTool: "#tool dotnet:?package=GitReleaseManager.Tool&version=0.18.0");
 
 Build.RunDotNetCore();

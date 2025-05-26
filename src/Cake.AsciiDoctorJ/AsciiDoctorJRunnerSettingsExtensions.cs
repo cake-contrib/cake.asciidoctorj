@@ -124,6 +124,7 @@ public static class AsciiDoctorJRunnerSettingsExtensions
     /// Set <see cref="AsciiDoctorJRunnerSettings.Require"/> to true.
     /// </summary>
     /// <param name="this">The <see cref="AsciiDoctorJRunnerSettings"/> that extended by this.</param>
+    /// <param name="require">The required libraries.</param>
     /// <returns>The reference to the <see cref="AsciiDoctorJRunnerSettings"/>.</returns>
     public static AsciiDoctorJRunnerSettings WithRequire(this AsciiDoctorJRunnerSettings @this, params string[] require)
     {
